@@ -22,6 +22,11 @@ class CreateNotificationsTable extends Migration
             $table->boolean('setting_refusal');
             $table->boolean('setting_message');
             $table->boolean('setting_service');
+
+            $table->foreign('user_id')
+                ->references('id')
+                ->on('users')
+                ->onDelete('cascade');
         });
     }
 

@@ -19,6 +19,16 @@ class CreateUserGenreTable extends Migration
 
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('genre_id');
+
+            $table->foreign('user_id')
+                ->references('id')
+                ->on('users')
+                ->onDelete('cascade');
+
+            $table->foreign('genre_id')
+                ->references('id')
+                ->on('genres')
+                ->onDelete('cascade');
         });
     }
 
