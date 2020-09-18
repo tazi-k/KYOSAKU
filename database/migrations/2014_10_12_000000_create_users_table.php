@@ -21,6 +21,14 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
+
+            $table->unsignedBigInteger('age')->nullable();
+            $table->text('profile')->nullable();
+            $table->text('sns_link')->nullable();
+            $table->text('work_link')->nullable();
+            $table->text('live')->nullable();
+            $table->text('collaboration_link')->nullable();
+
         });
     }
 
