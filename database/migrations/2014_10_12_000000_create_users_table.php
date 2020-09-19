@@ -26,9 +26,13 @@ class CreateUsersTable extends Migration
             $table->text('profile')->nullable();
             $table->text('sns_link')->nullable();
             $table->text('work_link')->nullable();
-            $table->text('live')->nullable();
             $table->text('collaboration_link')->nullable();
+            $table->unsignedBigInteger('prefectures_id')->nullable();
 
+            $table->foreign('prefectures_id')
+                ->references('id')
+                ->on('prefectures')
+                ->onDelete('cascade');
         });
     }
 

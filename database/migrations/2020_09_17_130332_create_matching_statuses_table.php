@@ -22,6 +22,15 @@ class CreateMatchingStatusesTable extends Migration
             $table->unsignedBigInteger('status');
             $table->string('message');
 
+            $table->foreign('to_user_id')
+                ->references('id')
+                ->on('users')
+                ->onDelete('cascade');
+
+            $table->foreign('from_user_id')
+                ->references('id')
+                ->on('users')
+                ->onDelete('cascade');
         });
     }
 

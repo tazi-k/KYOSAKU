@@ -21,6 +21,10 @@ class CreateImagesTable extends Migration
             $table->text('image_path');
             $table->text('public_id');
 
+            $table->foreign('user_id')
+                ->references('id')
+                ->on('users')
+                ->onDelete('cascade');
         });
     }
 
