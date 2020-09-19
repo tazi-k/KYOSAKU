@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Prefecture;
+use App\Genre;
 
 class UserController extends Controller
 {
@@ -24,16 +25,18 @@ class UserController extends Controller
      */
     public function create()
     {
-$ages = [];
-for($i = 10; $i < 51; $i++){
-    $ages[] = $i;
-}
+        // Laravelには基本PHPを書かないからこっちに書いた
+        $ages = [];
+        for($i = 10; $i < 51; $i++){
+            $ages[] = $i;
+        }
         $prefectures = Prefecture::all();
-
+        $genres = Genre::all();
 
         return view('users.create',[
             'prefectures' => $prefectures,
             'ages' => $ages,
+            'genres' => $genres,
             ]);
         
     }
