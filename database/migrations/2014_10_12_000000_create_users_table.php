@@ -29,6 +29,9 @@ class CreateUsersTable extends Migration
             $table->text('collaboration_link')->nullable();
             $table->unsignedBigInteger('prefectures_id')->nullable();
 
+            $table->text('image_path')->nullable();
+            $table->text('public_id')->nullable();
+
             $table->foreign('prefectures_id')
                 ->references('id')
                 ->on('prefectures')
