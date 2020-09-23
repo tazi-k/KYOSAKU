@@ -19,7 +19,7 @@ class CreateMatchingStatusesTable extends Migration
 
             $table->unsignedBigInteger('to_user_id');
             $table->unsignedBigInteger('from_user_id');
-            $table->unsignedBigInteger('status');
+            $table->unsignedBigInteger('status')->nullable()->change();
             $table->string('message');
 
             $table->foreign('to_user_id')

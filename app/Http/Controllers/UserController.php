@@ -5,6 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Prefecture;
 use App\Genre;
+use Auth;
+use App\User;
+use App\Http\Requests\UserRequest;
+use JD\Cloudder\Facades\Cloudder;
 
 class UserController extends Controller
 {
@@ -15,7 +19,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
+        $users = User::where('age','>',9)->get();
+        return view('users.index', compact('users'));
     }
 
     /**
@@ -25,20 +30,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        // Laravelには基本PHPを書かないからこっちに書いた
-        $ages = [];
-        for($i = 10; $i < 51; $i++){
-            $ages[] = $i;
-        }
-        $prefectures = Prefecture::all();
-        $genres = Genre::all();
-
-        return view('users.create',[
-            'prefectures' => $prefectures,
-            'ages' => $ages,
-            'genres' => $genres,
-            ]);
-        
+        // return view('users.create');
     }
 
     /**
@@ -49,7 +41,7 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
     }
 
     /**
@@ -60,7 +52,9 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        //
+        $user = User::find($id);
+
+        return view('users.show', compact('user'));
     }
 
     /**
@@ -69,9 +63,25 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit()
     {
-        //
+        // Laravelには基本PHPを書かないからこっちに書いた
+        $ages = [];
+        for($i = 10; $i < 51; $i++){
+            $ages[] = $i;
+        }
+        $user = Auth::user();
+        $prefectures = Prefecture::all();
+        $genres = Genre::all();
+        
+        return view('users.edit',compact('user'),[
+            // userディレクトリのedit.blade.phpと言う意味
+            'prefectures' => $prefectures,
+            'ages' => $ages,
+            'genres' => $genres,
+            // 茶色の文字(下の方)はキー名
+            ]);
+            
     }
 
     /**
@@ -81,9 +91,33 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        $user = Auth::user();
+
+        $user->sns_link = $request->sns_link;
+        $user->profile = $request->profile;
+        $user->work_link = $request->work_link;
+        $user->collaboration_link = $request->collaboration_link;
+        $user->age = $request->age;
+        // $user->prefectures_id = $request->prefectures_id;
+        $user->name = $request->name;
+        $user->password = $request->password;
+
+        if ($image = $request->file('image')) {
+            $image_path = $image->getRealPath();
+            Cloudder::upload($image_path, null);
+            $publicId = Cloudder::getPublicId();
+            $logoUrl = Cloudder::secureShow($publicId,[
+                'width' => 200,
+                'height' => 200
+            ]);
+            $user->image_path = $logoUrl;
+            $user->public_id = $publicId;
+        }
+        $user -> save();
+
+        return redirect()->route('users.index');
     }
 
     /**
@@ -94,6 +128,10 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $user = Auth::user();
+
+        $user->delete();
+
+        return redirect()->route('users.index');
     }
 }
