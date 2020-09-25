@@ -9,6 +9,7 @@ use Auth;
 use App\User;
 use App\Http\Requests\UserRequest;
 use JD\Cloudder\Facades\Cloudder;
+use App\MatchingStatus;
 
 class UserController extends Controller
 {
@@ -54,7 +55,19 @@ class UserController extends Controller
     {
         $user = User::find($id);
 
-        return view('users.show', compact('user'));
+
+
+        //応答待ち
+        $statusToAsk = MatchingStatus::where('from_user_id',Auth::id())
+                                        ->where('to_user_id',$user->id)->first();
+        // $statusToAsk->load('to_user',);
+        // //依頼
+        $statusToMe = MatchingStatus::where('to_user_id',Auth::id())
+                                        ->where('from_user_id',$user->id)->first();
+        // $statusToMe->load('from_user');
+
+
+        return view('users.show', compact('user','statusToAsk','statusToMe'));
     }
 
     /**

@@ -36,4 +36,9 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function matching_statuses()
+    {
+        return $this->hasMany('App\MatchingStatus');
+    }
 }
