@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password','age','profile','sns_link','work_link','live','collaboration_link',
+        'name', 'email', 'password','age','profile','sns_link','work_link','live','collaboration_link','prefectures_id'
     ];
 
     /**
@@ -40,5 +40,24 @@ class User extends Authenticatable
     public function matching_statuses()
     {
         return $this->hasMany('App\MatchingStatus');
+    }
+
+    public function genres()
+    {
+        return $this->belongsToMany('App\Genre')->withTimestamps();
+    }
+
+    public function prefecture()
+    {
+        return $this->belongsTo('App\Prefecture','prefectures_id');
+    }
+
+    public function rooms()
+    {
+        return $this->belongsToMany('App\Room')->withTimestamps();
+    }
+    public function chats()
+    {
+        return $this->hasMany('App\Chat');
     }
 }

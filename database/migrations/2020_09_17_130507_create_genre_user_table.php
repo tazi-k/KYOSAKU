@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateUserGenreTable extends Migration
+class CreateGenreUserTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateUserGenreTable extends Migration
      */
     public function up()
     {
-        Schema::create('user_genre', function (Blueprint $table) {
+        Schema::create('genre_user', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
 
@@ -29,6 +29,8 @@ class CreateUserGenreTable extends Migration
                 ->references('id')
                 ->on('genres')
                 ->onDelete('cascade');
+
+            $table->unique(['user_id','genre_id']);
         });
     }
 
@@ -39,6 +41,6 @@ class CreateUserGenreTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('user_genre');
+        Schema::dropIfExists('genre_user');
     }
 }

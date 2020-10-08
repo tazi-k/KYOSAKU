@@ -10,4 +10,9 @@ class Prefecture extends Model
     protected $fillable = [
         'prefecture_name'
     ];
+
+    public function users()
+    {
+        return $this->hasMany('App\User');
+    }
 }

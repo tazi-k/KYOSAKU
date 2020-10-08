@@ -4,14 +4,14 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Genre extends Model
+class Room extends Model
 {
-    protected $fillable = [
-        'genre_name'
-    ];
-
     public function users()
     {
         return $this->belongsToMany('App\User')->withTimestamps();
+    }
+    public function chats()
+    {
+        return $this->hasMany('App\Chat');
     }
 }

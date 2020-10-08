@@ -10,4 +10,10 @@ use Illuminate\Routing\Controller as BaseController;
 class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
+
+    public function __constract()
+{
+    View::share('genre_music', $genre_music);
+    View::share('genre_illustration', $genre_illustration);
+}
 }
