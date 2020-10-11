@@ -137,7 +137,7 @@
                     </div>
                 </div>
                 <div class="card" style="margin: 0 35px">
-                    <h5 class="text-center" style="font-weight: 20px">ジャンル</h5>
+                    <h5 class="text-center" style="font-weight: 20px">ジャンル<span class="badge badge-danger">片方必須</span></h5>
                     <div class="form-group">
                         <div class="text-center" style="margin-right: 90px; margin-left: 90px">
                             <label>音楽</label><br>
