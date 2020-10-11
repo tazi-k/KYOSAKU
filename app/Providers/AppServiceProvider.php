@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\View;
+use Illuminate\Support\Facades\Schema;
 use App\Genre;
 
 class AppServiceProvider extends ServiceProvider
@@ -28,5 +29,6 @@ class AppServiceProvider extends ServiceProvider
         $genres_music = Genre::where('id','<',15)->get();
         $genres_illustration = Genre::where('id','>',14)->get();
         View::share(compact('genres_music','genres_illustration'));
+        Schema::defaultStringLength(191);
     }
 }
