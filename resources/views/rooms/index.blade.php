@@ -4,9 +4,19 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
+            @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+            @endif
             @foreach($room->chats as $chat)
             <div class="card">
                 <div class="card-body">
+                    <img src="{{ $chat->user->image_path }}" alt="" width="40" height="40">
                     <p>{{ $chat->user->name }}</p>
                     <p>{{ $chat->message }}</p>
                 </div>

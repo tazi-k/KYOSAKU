@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\ChatRequest;
 use App\MatchingStatus;
 use Auth;
 use App\User;
@@ -18,7 +19,7 @@ class ChatController extends Controller
      * @return \Illuminate\Http\Response
      */
     //チャット保存処理。誰がどのルームで何を送ったかを保存している。
-    public function store(Request $request,$room)
+    public function store(ChatRequest $request,$room)
     {
         $chat = new Chat;
         $chat->message = $request->body;

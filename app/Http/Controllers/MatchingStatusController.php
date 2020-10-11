@@ -105,9 +105,6 @@ class MatchingStatusController extends Controller
                 $message->to($matching->from_user->email)->subject('ごめんなさいが届きました...');
             });
         }
-        if(Auth::id() !== $user->id) {
-            return abort(403);
-        }
         return redirect()->route('matching.index',$id);
     }
 }

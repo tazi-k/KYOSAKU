@@ -1,51 +1,81 @@
 @extends('layouts.app')
 
 @section('content')
+<style>
+    .pagination { justify-content: center; }
+</style>
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-12">
             <!-- フラッシュメッセージ -->
             @if (session('flash_message'))
-                <div class="message">
+            <div class="message">
                 {{ session('flash_message') }}
-                </div>
+            </div>
             @endif
 
-            <div class="card text-center">
+            {{-- <div class="card text-center"> --}}
+                <div class="text-center">
                 @if($genre)
-                    @if($genre->users->isEmpty())
-                        <h3 class="card-header">
-                            見つかりませんでした
-                        </h3>
-                    @else
-                        <h3 class="card-header">
-                        {{ $genre->genre_name }}のユーザー
-                        </h3>
-                        @foreach($genre->users as $genre_user)
+                @if($genre->users->isEmpty())
+                <h3 class="card-header">
+                    {{ $genre->genre_name }}のユーザー
+                </h3>
+                <div class="card-body">
+                    見つかりませんでした
+                </div>
+                @else
+                <h3 class="card-header">
+                    {{ $genre->genre_name }}のユーザー
+                </h3>
+
+                <div class="container">
+                    <div class="row justify-content-center">
+                        @foreach ($genre->users as $genre_user)
+                        <div class="card col-md-3 mx-3 my-2">
+                            <div class="my-3">
+                                <img src="{{ $genre_user->image_path }}" width="190px" height="150px" alt="画像" class="index-img">
+                            </div>
                             <div class="card-body">
-                                <img src="{{ $genre_user->image_path }}" alt="画像">
                                 <h5 class="card-title">名前：{{ $genre_user->name }}</h5>
                                 <p class="card-text">{{ $genre_user->profile }}</p>
                                 <a href="{{ route('users.show', $genre_user->id) }}" class="btn btn-primary">詳細へ</a>
                             </div>
+                        </div>
                         @endforeach
-                    @endif
+                    </div>
+                </div>
+                @endif
                 @else
-                    <h3 class="card-header">
+                <div class="box7 center">
+                    <h3 class="card-header" style="color: black">
                         アーティスト一覧
                     </h3>
-                    @foreach ($users as $user)
-                        <div class="card-body">
-                            <img src="{{ $user->image_path }}" alt="画像">
-                            <h5 class="card-title">名前：{{ $user->name }}</h5>
-                            <p class="card-text">{{ $user->profile }}</p>
-                            <a href="{{ route('users.show', $user->id) }}" class="btn btn-primary">詳細へ</a>
+                    
+                </div>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        @foreach ($users as $user)
+                        <div class="card col-md-3 mx-4 my-3 pr-0 pl-0">
+                            <div class="my-3">
+                                <img src="{{ $user->image_path }}" width="190px" height="150px" alt="画像" class="index-img">
+                            </div>
+                            <div class="card-body pr-0 pl-0">
+                                <h5 class="card-title"><span style="border-bottom: solid 1px rgb(0, 0, 0);">{{ $user->name }}</span></h5>
+                                <p class="card-text">{{ $user->profile }}</p>
+                                <a href="{{ route('users.show', $user->id) }}" class="btn btn-primary">詳細へ</a>
+                            </div>
                         </div>
-                    @endforeach
+                        @endforeach
+                    </div>
+                    
+                </div>
                 @endif
             </div>
-            {{ $users->links() }}
         </div>
+        {{ $users->links() }}
     </div>
+                        
+                        
 </div>
 @endsection

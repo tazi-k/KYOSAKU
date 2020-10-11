@@ -4,6 +4,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
+        <div class="card">
             <div class="card-header">
                 <img src="{{ $user->image_path }}" alt="画像">
                 <h5>アーティスト名：{{ $user->name }}</h5>
@@ -75,6 +76,7 @@
                     </div>
                 @endif
             </div>
+        </div>
         </div>
     </div>
 </div>

@@ -27,7 +27,7 @@ class UserController extends Controller
         {
             $genre = Genre::with('users')->find($request->genre_id);
         }
-        $users = User::where('age','>',9)->orderBy('created_at','desc')->paginate(2);
+        $users = User::where('age','>',9)->orderBy('created_at','desc')->paginate(9);
         return view('users.index', compact('users','genre'));
     }
     //whereNotNull 

@@ -16,9 +16,13 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    
+    
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+    
 </head>
 
 <body>
@@ -65,7 +69,7 @@
                         </li>
                         @endif
                         @else
-                        <img src="{{ Auth::user()->image_path }}" 　width="50" height="50">
+                        <img src="{{ Auth::user()->image_path }}" 　width="50" height="50" class="profile-img">
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>

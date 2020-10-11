@@ -1,0 +1,62 @@
+.form-control-file {
+  display: none;
+  width: 256px;
+  height: 256px;
+  /* background-image: url('./pronama_open_image.png'); */
+}
+
+.index-img{
+  padding: 0.2em 0.2em;
+  background: -moz-linear-gradient(#00ffff, #f52121);
+  background: -webkit-linear-gradient(#00ffff, #f52121);
+  background: linear-gradient(to right,#00ffff, #f52121);
+  color: #FFF;
+}
+.index-img p {
+  margin: 0; 
+  padding: 0;
+}
+
+img{
+  object-fit: cover; 
+}
+
+.profile-img{
+  padding: 0.15em 0.15em;
+  background: -moz-linear-gradient(#012f79, #800000);
+  background: -webkit-linear-gradient(#012f79, #800000);
+  background: linear-gradient(to right,#012f79, #800000);
+  color: #FFF;
+}
+.profile-img p {
+  margin: 0; 
+  padding: 0;
+}
+
+
+.td{
+  width: 290px;
+}
+
+body{
+  background-image: url("https://kabekin.com/uploads/cache/2624722142/cg_digital_art_dark_2560x1600-400x270-MM-100.jpg");
+}
+/* https://uploads.tapatalk-cdn.com/20161031/196e2cc7ca7c0b75c46d9f70541c10a4.jpg */
+
+.box7{
+  width: 300px;
+  padding: 0.5em 1em;
+  margin: auto;
+  color: #474747;
+  background: whitesmoke;/*背景色*/
+  border-left: double 7px #fd6500;/*左線*/
+  border-right: double 7px #fd6500;/*右線*/
+}
+.box7 h3 {
+  margin: 0; 
+  padding: 0;
+}
+
+.card{
+  opacity: 0.9;
+}
