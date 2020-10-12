@@ -36,9 +36,6 @@ class AppServiceProvider extends ServiceProvider
         Schema::defaultStringLength(191);
     }
 }
-// $genres_music = Genre::where('id',[1,11,21,31,41,51,61,71,91,12,22,32,42,52])->get();
-//         $genres_illustration = Genre::where('id',[62,72,82,92,13,23,33,43,53,63,73,83,93,])->get();
-
 
         // $genres_music = Genre::where('id','<',15)->get();
         //     $genres_illustration = Genre::where('id','>',14)->get();
