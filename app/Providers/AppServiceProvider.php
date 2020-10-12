@@ -26,9 +26,12 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $genres_music = Genre::where('id','<',15)->get();
-        $genres_illustration = Genre::where('id','>',14)->get();
-        View::share(compact('genres_music','genres_illustration'));
+        if(env('APP_ENV') === 'production')
+        {
+            $genres_music = Genre::where('id','<',15)->get();
+            $genres_illustration = Genre::where('id','>',14)->get();
+            View::share(compact('genres_music','genres_illustration'));
+        }
         Schema::defaultStringLength(191);
     }
 }
