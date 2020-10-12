@@ -71,8 +71,8 @@ class UserController extends Controller
         $user = Auth::user();
         $prefectures = Prefecture::all();
         //ID
-        $genres_music = Genre::where('id','<',15)->get();
-        $genres_illustration = Genre::where('id','>',14)->get();
+        $genres_music = Genre::where('id','<',52)->get();
+        $genres_illustration = Genre::where('id','>',42)->get();
         $my_genres = User::find($user->id)->genres()->get();
         $my_genres_id = [];
         foreach($my_genres as $my_genre)
