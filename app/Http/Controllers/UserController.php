@@ -98,6 +98,9 @@ class UserController extends Controller
     public function update(UserRequest $request)
     {
         $user = Auth::user();
+        if($user->image_path === null && $request->file === null){
+            return redirect()->route('users.edit',$user->id)->with('flash_message','トップ画像は必須です');
+        }
         $user->genres()->detach($user->genre_id);
         foreach($request->genre_id as $genre_id)
         {

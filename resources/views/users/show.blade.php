@@ -195,7 +195,7 @@
                                     </form>
                                 @endif
                             @else
-                                共作するには自分のプロフィールを設定してください
+                                <h5 class="text-center mb-4" style="color: orchid">共作するには自分のプロフィールを設定してください</h5>
                             @endif
                         </div>
         

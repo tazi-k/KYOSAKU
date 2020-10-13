@@ -9,9 +9,13 @@
         <div class="col-md-12">
             <!-- フラッシュメッセージ -->
             @if (session('flash_message'))
-            <div class="message">
+                <div class="kyo">
+                <div class="alert alert-success text-center" style="width: 400px; margin:0 auto;margin-bottom: 10px">
+                <div class="message">
                 {{ session('flash_message') }}
-            </div>
+                </div>
+                </div>
+                </div>
             @endif
 
             {{-- <div class="card text-center"> --}}
@@ -76,7 +80,11 @@
                 @endif
             </div>
         </div>
+        @if($genre)
+        {{-- {{ $genre->user->links() }} --}}
+        @else
         {{ $users->links() }}
+        @endif
     </div>
 </div>
 @endsection

@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -12,6 +11,16 @@
                         @foreach ($errors->all() as $error)
                         <li>{{ $error }}</li>
                         @endforeach
+                        
+                    </ul>
+                </div>
+                @endif
+                @if (session('flash_message'))
+                <div class="alert alert-danger">
+                    <ul>
+                        <li>
+                            {{ session('flash_message') }}
+                        </li>
                     </ul>
                 </div>
                 @endif
@@ -23,18 +32,18 @@
                             <div class="form-group mt-5 mr-4 pr-5">
                                 <label>
                                     @if($user->image_path)
-                                    <img src="{{ $user->image_path }}" alt="画像">
+                                    <img src="{{ $user->image_path }}" alt="画像" style="max-width: 150px; margin-left: 60px;">
                                     <input type="file" class="form-control-file" id="image" name="image">
                                     @else
                                     <img src="https://cdn.pixabay.com/photo/2020/01/31/07/53/man-4807395_1280.jpg"
-                                        alt="画像" 　style="max-width: 150px">
-                                    <input type="file" class="form-control-file" id="image" name="image">
+                                        alt="画像" 　style="max-width: 150px; margin-left: 60px;">
+                                    <input type="file" class="form-control-file mt-3" id="image" name="image">
                                     @endif
                                 </label>
                             </div>
 
                             <table class="table table-bordered float-right col-md-5"
-                                style="margin-top: 30px; margin-right: 0px;">
+                                style="margin-top: 30px; margin-right: 0px; margin-left: -40px">
                                 <tbody>
 
                                     <tr>
@@ -175,7 +184,7 @@
                 <form action="{{ route('users.destroy',Auth::id()) }}" method="POST">
                     {{ csrf_field('DELETE') }}
                     {{ method_field('DELETE') }}
-                    <div class="btn-4">
+                    <div class="btn-4 mb-3">
                     <input type="submit" value="退会する" class="btn btn-danger" onclick='return confirm("退会しますか？");'>
                     </div>
                 </form>

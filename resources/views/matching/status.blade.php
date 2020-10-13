@@ -60,20 +60,22 @@
                             {{-- <a type="button" href="{{ route('matching.show',[$user->id,$getUser->id]) }}"> --}}
                             <form action="{{ route('matching.show',[$user->id,$getUser->id]) }}" method="GET">
                                 {{csrf_field()}}
-                                <button type="submit" href="{{ route('matching.show',[$user->id,$getUser->id]) }}" class="btn-2">
-                                あなたへのメッセージ
+                                <button type="submit" href="{{ route('matching.show',[$user->id,$getUser->id]) }}"
+                                    class="btn-2">
+                                    あなたへのメッセージ
                                 </button>
-                            {{-- </a> --}}
+                                {{-- </a> --}}
                             </form>
                             <form action="{{ route('matching.update',[$user->id,$getUser->id]) }}" method="POST">
                                 {{csrf_field()}}
                                 {{ method_field('PATCH') }}
                                 <input type="hidden" name="status" value="2">
-                                <button type="submit" class="btn-box btn-success">共作る</button>
+                                <button type="submit" class="btn-box">共作る</button>
                             </form>
 
 
-                            {{-- <a type="button" href="{{ route('matching.update',[$user->id,$getUser->id]) }}" class="btn-box">共作る</a> --}}
+                            {{-- <a type="button" href="{{ route('matching.update',[$user->id,$getUser->id]) }}"
+                            class="btn-box">共作る</a> --}}
 
 
                             <form action="{{ route('matching.update',[$user->id,$getUser->id]) }}" method="POST">
@@ -95,15 +97,10 @@
                             <h6 class="mt-4">{{ $AskUser->created_at }}</h6>
                         </div>
                         @endforeach
-
-
-
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <section>
-        
 </div>
 @endsection
