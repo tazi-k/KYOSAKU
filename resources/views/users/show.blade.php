@@ -129,20 +129,20 @@
                                     <tr>
                                         <th scope="row">過去作品</th>
                                         <td>
-                                            {{ $user->work_link }}
+                                            <a href="{{ $user->work_link }}">{{ $user->work_link }}</a>
                                         </td>
                                     </tr>
 
                                     <tr>
                                         <th scope="row">SNSリンク</th>
                                         <td>
-                                            {{ $user->sns_link }}
+                                            <a href="{{ $user->sns_link }}">{{ $user->sns_link }}</a>
                                         </td>
                                     </tr>
                                     <tr>
                                         <th scope="row">KYOSAKU作品</th>
                                         <td>
-                                            {{ $user->collaboration_link }}
+                                            <a href="{{ $user->collaboration_link }}">{{ $user->collaboration_link }}</a>
                                         </td>
                                     </tr>
 
