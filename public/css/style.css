@@ -38,10 +38,11 @@ img{
   width: 290px;
 }
 
-body{
-  background-image: url("https://kabekin.com/uploads/cache/2624722142/cg_digital_art_dark_2560x1600-400x270-MM-100.jpg");
+.user-background{
+  background-image: url("https://cdn.pixabay.com/photo/2017/02/08/17/24/butterfly-2049567_1280.jpg");
+  background-size: cover;
+  height: 870px;
 }
-/* https://uploads.tapatalk-cdn.com/20161031/196e2cc7ca7c0b75c46d9f70541c10a4.jpg */
 
 .box7{
   width: 300px;

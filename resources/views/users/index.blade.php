@@ -55,7 +55,6 @@
                     <h3 class="card-header" style="color: black">
                         アーティスト一覧
                     </h3>
-                    
                 </div>
                 <div class="container">
                     <div class="row justify-content-center">
