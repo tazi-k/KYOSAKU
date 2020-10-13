@@ -51,6 +51,7 @@ class UserController extends Controller
         //依頼されている状態
         $statusToMe = MatchingStatus::where('to_user_id',Auth::id())
                                         ->where('from_user_id',$user->id)->first();
+
         return view('users.show', compact('user','statusToAsk','statusToMe'));
     }
     //変数命名

@@ -61,7 +61,6 @@ class MatchingStatusController extends Controller
             })
             ->get();
         $statusToMatching->load('from_user','to_user');
-
         
         return view('matching.status',compact('statusToAsk','statusToMe','user','statusToMatching'));
     }

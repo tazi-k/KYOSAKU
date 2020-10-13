@@ -18,21 +18,25 @@
                 <div class="text-center">
                 @if($genre)
                 @if($genre->users->isEmpty())
-                <h3 class="card-header">
+                <div class="box8 center">
+                    <h3 class="card-header" style="color: black">
                     {{ $genre->genre_name }}のユーザー
-                </h3>
-                <div class="card-body">
-                    見つかりませんでした
+                    </h3>
+                </div>
+                <div class="card-1 center">
+                    <i class="fas fa-search"></i> 見つかりませんでした
                 </div>
                 @else
-                <h3 class="card-header">
+                <div class="box8 center">
+                <h3 class="card-header" style="color: black">
                     {{ $genre->genre_name }}のユーザー
                 </h3>
+                </div>
 
                 <div class="container">
                     <div class="row justify-content-center">
                         @foreach ($genre->users as $genre_user)
-                        <div class="card col-md-3 mx-3 my-2">
+                        <div class="card col-md-3 mx-4 my-3 pr-0 pl-0">
                             <div class="my-3">
                                 <img src="{{ $genre_user->image_path }}" width="190px" height="150px" alt="画像" class="index-img">
                             </div>
@@ -75,7 +79,5 @@
         </div>
         {{ $users->links() }}
     </div>
-                        
-                        
 </div>
 @endsection

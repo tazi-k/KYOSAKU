@@ -33,8 +33,6 @@
                                 </label>
                             </div>
 
-
-
                             <table class="table table-bordered float-right col-md-5"
                                 style="margin-top: 30px; margin-right: 0px;">
                                 <tbody>
@@ -164,19 +162,22 @@
                         </div>
                     </div>
 
-                    <div class="form-group" style="padding-right: 80px; padding-left: 80px">
+                    <div class="form-group" style="margin-top: 10px; padding-right: 80px; padding-left: 80px">
                         <textarea class="form-control" placeholder="自己紹介" rows="5"
                             name="profile">{{ $user->profile }}</textarea>
                     </div>
 
-
+                    <div class="btn-4 mb-4">
                     <button type="submit" class="btn btn-primary">作成する</button>
+                    </div>
                 </form>
 
                 <form action="{{ route('users.destroy',Auth::id()) }}" method="POST">
                     {{ csrf_field('DELETE') }}
                     {{ method_field('DELETE') }}
+                    <div class="btn-4">
                     <input type="submit" value="退会する" class="btn btn-danger" onclick='return confirm("退会しますか？");'>
+                    </div>
                 </form>
             </div>
         </div>

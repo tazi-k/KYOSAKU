@@ -23,6 +23,7 @@ class MatchingStatus extends Model
     {
         return $this->belongsTo('App\User','from_user_id');
     }
+    
 
 
 }

@@ -1,4 +1,4 @@
-@extends('layouts.app')
+{{-- @extends('layouts.app')
 
 @section('content')
 <div class="container">
@@ -23,6 +23,7 @@
                 <p>お住まい：{{ $user->prefecture->prefecture_name }}</p>
             </div>
 
+            
             <div class="row justify-content-center">
                 <div class="col-md-3">
                     @if(Auth::user()->age)
@@ -77,6 +78,139 @@
                 @endif
             </div>
         </div>
+        </div>
+    </div>
+</div>
+@endsection --}}
+
+
+
+
+@extends('layouts.app')
+
+@section('content')
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            {{csrf_field()}}
+                            {{ method_field('PATCH') }}
+                            <div class="form-group mt-5 mr-4 pr-5">
+                                    <img src="{{ $user->image_path }}" alt="画像">
+                            </div>
+
+                            <table class="table table-bordered float-right col-md-5"
+                                style="margin-top: 30px; margin-right: 0px;">
+                                <tbody>
+
+                                    <tr>
+                                        <th scope="row">名前
+                                        </th>
+                                        <td>
+                                            {{ $user->name }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">年齢</th>
+                                        <td>
+                                            {{ $user->age }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">お住まい</th>
+                                        <td>
+                                            {{ $user->prefecture->prefecture_name }}
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <th scope="row">過去作品</th>
+                                        <td>
+                                            {{ $user->work_link }}
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <th scope="row">SNSリンク</th>
+                                        <td>
+                                            {{ $user->sns_link }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">KYOSAKU作品</th>
+                                        <td>
+                                            {{ $user->collaboration_link }}
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="border text-center" style="width: 450px; height:100px">
+                        {{ $user->profile }}
+                    </div>
+
+                    @if(Auth::user()->age)
+                        @if ($statusToAsk && $statusToAsk->status == 1)
+                            <h5 class="abcd">依頼中です</h5>
+                    <div class="row justify-content-center">
+                        <div class="col-md-3">
+                                    <form action="{{ route('matching.index',Auth::id()) }}" style="text-align: center; margin-bottom: 40px">
+                                        <input type="submit" value="&#xf2b5; 共作状況で確認" class="fas btn btn-primary">
+                                    </form>
+        
+                                @elseif ($statusToMe && $statusToMe->status == 1)
+                                <h5 class="abcd">依頼がきています</h5>
+                                    <form action="{{ route('matching.index',Auth::id()) }}" style="text-align: center; margin-bottom: 40px">
+                                        <input type="submit" value="&#xf2b5; 共作状況で確認" class="fas btn btn-primary">
+                                    </form>
+        
+                                @elseif ($statusToAsk && $statusToAsk->status == 2)
+                                <h5 class="abcd">共作中です</h5>
+                                    <form action="{{ route('matching.index',Auth::id()) }}" style="text-align: center; margin-bottom: 40px">
+                                        <input type="submit" value="&#xf2b5; 共作状況で確認" class="fas btn btn-primary">
+                                    </form>
+        
+                                @elseif ($statusToMe && $statusToMe->status == 2)
+                                <h5 class="abcd">共作中です</h5>
+                                    <form action="{{ route('matching.index',Auth::id()) }}" style="text-align: center; margin-bottom: 40px">
+                                        <input type="submit" value="&#xf2b5; 共作状況で確認" class="fas btn btn-primary">
+                                    </form>
+        
+                                @elseif (Auth::user()->id !== $user->id)
+                                    <form action="{{ route('matching.create',Auth::id()) }}" style="text-align: center; margin-bottom: 40px">
+                                        <input type="hidden" name="user_id" value="{{ $user->id }}">
+                                        {{-- <input type="submit" value="&#xf2b5; 共作りたい！" class="fas btn btn-success"> --}}
+                                        <button type="submit" class="btn-box-2">共作りたい！</button>
+                                    </form>
+        
+                                @else
+                                    <form action="{{ route('matching.index',Auth::id()) }}" style="text-align: center; margin-bottom: 40px">
+                                        <input type="submit" value="&#xf2b5; 共作状況へ" class="fas btn btn-primary">
+                                    </form>
+                                @endif
+                            @else
+                                共作するには自分のプロフィールを設定してください
+                            @endif
+                        </div>
+        
+                        @if ($statusToAsk && $statusToAsk->status !== 2)
+                            <div class="col-md-3 mb-3">
+                                <form action="{{ route('matching.destroy',[$user->id,$statusToAsk->id]) }}" method="POST">
+                                    {{ csrf_field() }}
+                                    {{ method_field('DELETE') }}
+                                    <input type="submit" value="&#xf21e; 取り消す" class="fas btn btn-danger" onclick='return confirm("取り消しますか？");'>
+                                </form>
+                            </div>
+                        @endif
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
