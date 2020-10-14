@@ -145,7 +145,7 @@ class UserController extends Controller
         if(Auth::id() !== $user->id) {
             return abort(403);
         }
-        return redirect()->route('home');
+        return redirect()->url('/');
         // return view('index');
         // return redirect()->route('users.index');
     }
