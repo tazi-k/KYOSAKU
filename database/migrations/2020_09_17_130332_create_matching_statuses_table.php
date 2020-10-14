@@ -19,8 +19,8 @@ class CreateMatchingStatusesTable extends Migration
 
             $table->unsignedBigInteger('to_user_id');
             $table->unsignedBigInteger('from_user_id');
-            $table->unsignedBigInteger('status')->nullable()->change();
-            $table->string('message');
+            $table->unsignedBigInteger('status')->default(0);
+            $table->string('message')->nullable();
 
             $table->foreign('to_user_id')
                 ->references('id')

@@ -4,173 +4,192 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <form action="{{ route('users.update',Auth::id())}}" method="POST" enctype="multipart/form-data">
-                {{csrf_field()}}
-                {{ method_field('PATCH') }}
-                <div class="form-group">
-                    <img src="{{ $user->image_path }}" alt="画像">
-                    <label for="image">プロフィール画像</label>
-                    <input type="file" class="form-control-file" id="image" name="image">
-                </div>
-
-                <div class="form-group">
-                    <label>SNSリンク</label>
-                    <input type="text" class="form-control" placeholder="SNSのリンクを記載して下さい"value="{{ $user->sns_link }}" name="sns_link">
-                </div>
-
-                <div class="form-group">
-                    <label>名前</label>
-                    <input type="text" class="form-control" placeholder="アーティスト名を入力してください"value="{{ $user->name }}" name="name">
-                </div>
-
-                <div class="form-group">
-                    <label>E-mail</label>
-                    <input type="text" class="form-control" placeholder="Eメールを入力してください" value="{{ $user->email }}" name="email">
-                </div>
-
-                <div class="form-group">
-                    <label>パスワード</label>
-                    <input type="text" class="form-control" placeholder="パスワードを入力してください" value="{{ $user->password }}" name="password">
-                </div>
-
-                <div class="form-group">
-                    <label>自己紹介文</label>
-                    <textarea class="form-control" placeholder="自己紹介文を記載してください" rows="5"  name="profile">{{ $user->profile }}</textarea>
-                </div>
-
-
-                <div class="form-group">
-                    <label>過去作品リンク</label>
-                    <input type="text" class="form-control" placeholder="過去作品のリンクを記載してください" value="{{ $user->work_link }}" name="work_link">
-                </div>
-                <div class="form-group">
-                    <label>KYOSAKU作品リンク</label>
-                    <input type="text" class="form-control" placeholder="本サイトにて完成したコラボ作品を記載してください" value="{{ $user->collaboration_link }}" name="collaboration_link">
-                </div>
-                <div class="form-group">
-                    <label>年齢</label><br>
-                    <select name="age">
-                        @foreach ($ages as $age){{-- ○から○（決めてよし）一個ずつ取り出し --}}
-                        <option value="{{ $age }}">{{ $age }}</option>
+            <div class="card">
+                @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
                         @endforeach
-
-                    </select>
-                    <label>歳</label>
-                </div>
-                <div class="form-group">
-                    <label>お住まい</label><br>
-                    <select name="prefectures_id">
-                        @foreach ($prefectures as $prefecture)
-                        {{-- UserController.phpで定義したので呼べる --}}
-                        <option value="{{ $prefecture->id }}">{{ $prefecture->name }}</option>
-                        @endforeach
-                            <option selected="">選択する</option>  
-                            <option value="1">北海道</option>
-                            <option value="2">青森県</option>
-                            <option value="3">岩手県</option>
-                            <option value="4">宮城県</option>
-                            <option value="5">秋田県</option>
-                            <option value="6">山形県</option>
-                            <option value="7">福島県</option>
-                            <option value="8">茨城県</option>
-                            <option value="9">栃木県</option>
-                            <option value="10">群馬県</option>
-                            <option value="11">埼玉県</option>
-                            <option value="12">千葉県</option>
-                            <option value="13">東京都</option>
-                            <option value="14">神奈川県</option>
-                            <option value="15">新潟県</option>
-                            <option value="16">富山県</option>
-                            <option value="17">石川県</option>
-                            <option value="18">福井県</option>
-                            <option value="19">山梨県</option>
-                            <option value="20">長野県</option>
-                            <option value="21">岐阜県</option>
-                            <option value="22">静岡県</option>
-                            <option value="23">愛知県</option>
-                            <option value="24">三重県</option>
-                            <option value="25">滋賀県</option>
-                            <option value="26">京都府</option>
-                            <option value="27">大阪府</option>
-                            <option value="28">兵庫県</option>
-                            <option value="29">奈良県</option>
-                            <option value="30">和歌山県</option>
-                            <option value="31">鳥取県</option>
-                            <option value="32">島根県</option>
-                            <option value="33">岡山県</option>
-                            <option value="34">広島県</option>
-                            <option value="35">山口県</option>
-                            <option value="36">徳島県</option>
-                            <option value="37">香川県</option>
-                            <option value="38">愛媛県</option>
-                            <option value="39">高知県</option>
-                            <option value="40">福岡県</option>
-                            <option value="41">佐賀県</option>
-                            <option value="42">長崎県</option>
-                            <option value="43">熊本県</option>
-                            <option value="44">大分県</option>
-                            <option value="45">宮崎県</option>
-                            <option value="46">鹿児島県</option>
-                            <option value="47">沖縄県</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label>ジャンル：音楽</label><br>
-                    <select name="music_genre_id">
-                        @foreach ($genres as $genre)
-                        <option value="{{ $genre->id }}">{{ $genre->name }}</option>
-                        @endforeach
-                        <option selected="">選択する</option>
-                        <option value="1">J-pop</option>
-                        <option value="2">Rock</option>
-                        <option value="3">洋楽系</option>
-                        <option value="4">Dubstep</option>
-                        <option value="5">クラシック</option>
-                        <option value="6">HIPHOP</option>
-                        <option value="7">TRAP</option>
-                        <option value="8">RAP</option>
-                        <option value="9">EDM</option>
-                        <option value="10">K-POP</option>
-                        <option value="11">R&B</option>
-                        <option value="12">レゲエ</option>
-                        <option value="13">ジャズ</option>
-                        <option value="14">アニメ</option>
                         
-                    </select>
+                    </ul>
                 </div>
-
-                <div class="form-group">
-                    <label>ジャンル：イラスト</label><br>
-                    <select name="genre_id">
-                        @foreach ($genres as $genre)
-                        <option value="{{ $genre->id }}">{{ $genre->name }}</option>
-                        @endforeach
-                        <option selected="">選択する</option>
-                        <option value="15">ノベル</option>
-                        <option value="16">キャラクター</option>
-                        <option value="17">似顔絵</option>
-                        <option value="18">ファッション</option>
-                        <option value="19">リアル</option>
-                        <option value="20">コミック</option>
-                        <option value="21">ポップ</option>
-                        <option value="22">エッセイ</option>
-                        <option value="23">ゆるかわ</option>
-                        <option value="24">ペン画</option>
-                        <option value="25">水彩</option>
-                        <option value="26">サイン風</option>
-                        <option value="27">モダン</option>
-                        <option value="28">レトロ</option>
-                    </select>
+                @endif
+                @if (session('flash_message'))
+                <div class="alert alert-danger">
+                    <ul>
+                        <li>
+                            {{ session('flash_message') }}
+                        </li>
+                    </ul>
                 </div>
+                @endif
+                <form action="{{ route('users.update',Auth::id())}}" method="POST" enctype="multipart/form-data">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            {{csrf_field()}}
+                            {{ method_field('PATCH') }}
+                            <div class="form-group mt-5 mr-4 pr-5">
+                                <label>
+                                    @if($user->image_path)
+                                    <h5><span class="badge badge-danger">必須</span></h5>
+                                    <img src="{{ $user->image_path }}" alt="画像" style="max-width: 150px; margin-left: 60px;">
+                                    <input type="file" class="form-control-file" id="image" name="image">
+                                    @else
+                                    <img src="https://cdn.pixabay.com/photo/2020/01/31/07/53/man-4807395_1280.jpg"
+                                        alt="画像" 　style="max-width: 150px; margin-left: 60px;">
+                                    <input type="file" class="form-control-file mt-3" id="image" name="image">
+                                    @endif
+                                </label>
+                            </div>
 
-                <button type="submit" class="btn btn-primary">作成する</button>
-            </form>
-            <form action="{{ route('users.destroy',Auth::id()) }}" method="POST">
-                {{ csrf_field('DELETE') }}
-                {{ method_field('DELETE') }}
-                <input type="submit" value="退会する" class="btn btn-danger" onclick='return confirm("退会しますか？");'>
-            </form>
+                            <table class="table table-bordered float-right col-md-5"
+                                style="margin-top: 30px; margin-right: 0px; margin-left: -40px">
+                                <tbody>
+
+                                    <tr>
+                                        <th scope="row">名前<span class="badge badge-danger">必須</span>
+                                        </th>
+                                        <td>
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" placeholder="アーティスト名"
+                                                    value="{{old('name',$user->name) }}" name="name">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">年齢<span class="badge badge-danger">必須</span></th>
+                                        <td>
+                                            <div class="form-group">
+                                                <select name="age">
+                                                    <option value="">選択する</option>
+                                                    {{-- configにかいてもいい --}}
+                                                    @foreach ($ages as $age)
+                                                    <option value="{{ $age }}"
+                                                        {{ $user->age === $age ? 'selected' : '' }}>
+                                                        {{ $age }}
+                                                    </option>
+                                                    @endforeach
+                                                </select>
+                                                <label>歳</label>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">お住まい<span class="badge badge-danger">必須</span></th>
+                                        <td>
+                                            <div class="form-group">
+                                                <select name="prefectures_id">
+                                                    @if($user->prefectures_id == null)
+                                                    <option value="" selected="">選択する</option>
+                                                    @endif
+                                                    @foreach ($prefectures as $prefecture)
+                                                    @if($user->prefectures_id == $prefecture->id ||
+                                                    old('prefectures_id')==
+                                                    $prefecture->id)
+                                                    <option value="{{ $prefecture->id }}" selected="">
+                                                        {{$prefecture->prefecture_name }}
+                                                    </option>
+                                                    @else
+                                                    <option value="{{ $prefecture->id }}">
+                                                        {{ $prefecture->prefecture_name }}
+                                                    </option>
+                                                    @endif
+                                                    @endforeach
+                                                </select>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <th scope="row">過去作品<span class="badge badge-danger">必須</span></th>
+                                        <td>
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" placeholder="過去作品のリンク"
+                                                    value="{{old('work_link',$user->work_link) }}" name="work_link">
+                                            </div>
+                                        </td>
+                                    </tr>
+
+
+
+                                    <tr>
+                                        <th scope="row">E-mail<span class="badge badge-danger">必須</span></th>
+                                        <td>
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" placeholder="Eメールアドレス"
+                                                    value="{{old('email',$user->email) }}" name="email">
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <th scope="row">SNSリンク</th>
+                                        <td>
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" placeholder="SNSのリンク"
+                                                    value="{{old('sns_link',$user->sns_link) }}" name="sns_link">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">KYOSAKU作品</th>
+                                        <td>
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" placeholder="本サイトでの作品のリンク"
+                                                    value="{{old( 'collaboration_link',$user->collaboration_link) }}" name="collaboration_link">
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="card" style="margin: 0 35px">
+                        <h5 class="text-center" style="font-weight: 20px">ジャンル<span
+                                class="badge badge-danger">片方必須</span></h5>
+                        <div class="form-group">
+                            <div class="text-center" style="margin-right: 90px; margin-left: 90px">
+                                <label>音楽</label><br>
+                                @foreach ($genres_music as $genre)
+                                <input type="checkbox" name="genre_id[]" value="{{ $genre->id }}"
+                                    {{ in_array($genre->id,$my_genres_id) ? "checked" : "" }}>
+                                <label>{{ $genre->genre_name }}</label>
+                                @endforeach
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="text-center" style="margin-right: 55px; margin-left: 55px">
+                                <label>イラスト</label><br>
+                                @foreach ($genres_illustration as $genre)
+                                <input type="checkbox" name="genre_id[]" value="{{ $genre->id }}"
+                                    {{ in_array($genre->id,$my_genres_id) ? "checked" : "" }}>
+                                <label>{{ $genre->genre_name }}</label>
+                                @endforeach
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group" style="margin-top: 10px; padding-right: 80px; padding-left: 80px">
+                        <textarea class="form-control" placeholder="自己紹介" rows="5"
+                            name="profile">{{ $user->profile }}</textarea>
+                    </div>
+
+                    <div class="btn-4 mb-4">
+                    <button type="submit" class="btn btn-primary">作成する</button>
+                    </div>
+                </form>
+
+                <form action="{{ route('users.destroy',Auth::id()) }}" method="POST">
+                    {{ csrf_field('DELETE') }}
+                    {{ method_field('DELETE') }}
+                    <div class="btn-4 mb-3">
+                    <input type="submit" value="退会する" class="btn btn-danger" onclick='return confirm("退会しますか？");'>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 </div>

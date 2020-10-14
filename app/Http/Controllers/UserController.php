@@ -9,6 +9,7 @@ use Auth;
 use App\User;
 use App\Http\Requests\UserRequest;
 use JD\Cloudder\Facades\Cloudder;
+use App\MatchingStatus;
 
 class UserController extends Controller
 {
@@ -17,32 +18,21 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    //プロフィール設定済みのユーザーを一覧表示する処理。
+    //ジャンル検索された場合は、そのジャンルで登録している者のみ表示。
+    public function index(Request $request)
     {
-        $users = User::where('age','>',9)->get();
-        return view('users.index', compact('users'));
+        $genre = null;
+        if($request->genre_id)
+        {
+            $genre = Genre::with('users')->find($request->genre_id);
+        }
+        // dd($genre);
+        $users = User::where('age','>',9)->orderBy('created_at','desc')->paginate(5);
+        return view('users.index', compact('users','genre'));
     }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        // return view('users.create');
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        
-    }
+    //whereNotNull 
+    //if文とってみる
 
     /**
      * Display the specified resource.
@@ -50,12 +40,22 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+    //選択したユーザーの詳細情報をとってきている。
+    //依頼した・されたユーザーを条件分岐でとってきている。
     public function show($id)
     {
         $user = User::find($id);
+        $user->load('prefecture','genres');
+        //応答待ちの状態
+        $statusToAsk = MatchingStatus::where('from_user_id',Auth::id())
+                                        ->where('to_user_id',$user->id)->first();
+        //依頼されている状態
+        $statusToMe = MatchingStatus::where('to_user_id',Auth::id())
+                                        ->where('from_user_id',$user->id)->first();
 
-        return view('users.show', compact('user'));
+        return view('users.show', compact('user','statusToAsk','statusToMe'));
     }
+    //変数命名
 
     /**
      * Show the form for editing the specified resource.
@@ -63,24 +63,28 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+    //プロフ編集に必要な項目をとってきたりしている。
     public function edit()
     {
-        // Laravelには基本PHPを書かないからこっちに書いた
         $ages = [];
-        for($i = 10; $i < 51; $i++){
-            $ages[] = $i;
+        for($age = 10; $age < 51; $age++){
+            $ages[] = $age;
         }
         $user = Auth::user();
         $prefectures = Prefecture::all();
-        $genres = Genre::all();
-        
-        return view('users.edit',compact('user'),[
-            // userディレクトリのedit.blade.phpと言う意味
-            'prefectures' => $prefectures,
-            'ages' => $ages,
-            'genres' => $genres,
-            // 茶色の文字(下の方)はキー名
-            ]);
+        //ID
+        $genres_music = Genre::where('id','<',141)->get();
+        $genres_illustration = Genre::where('id','>',131)->get();
+        $my_genres = User::find($user->id)->genres()->get();
+        $my_genres_id = [];
+        foreach($my_genres as $my_genre)
+        {
+            $my_genres_id[] = $my_genre->id;
+        }
+        if(Auth::id() !== $user->id) {
+            return abort(403);
+        }
+        return view('users.edit',compact('user','prefectures','ages','genres_music','genres_illustration','my_genres_id'));
             
     }
 
@@ -91,18 +95,26 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request)
+    //編集処理。ジャンルは一旦白紙状態にして再度保存し直す。
+    public function update(UserRequest $request)
     {
         $user = Auth::user();
+        if($user->image_path === null && $request->file('image') === null){
+            return redirect()->route('users.edit',$user->id)->with('flash_message','トップ画像は必須です');
+        }
+        $user->genres()->detach($user->genre_id);
+        foreach($request->genre_id as $genre_id)
+        {
+            $user->genres()->attach($genre_id);
+        }
 
         $user->sns_link = $request->sns_link;
         $user->profile = $request->profile;
         $user->work_link = $request->work_link;
         $user->collaboration_link = $request->collaboration_link;
         $user->age = $request->age;
-        // $user->prefectures_id = $request->prefectures_id;
+        $user->prefectures_id = $request->prefectures_id;
         $user->name = $request->name;
-        $user->password = $request->password;
 
         if ($image = $request->file('image')) {
             $image_path = $image->getRealPath();
@@ -116,8 +128,7 @@ class UserController extends Controller
             $user->public_id = $publicId;
         }
         $user -> save();
-
-        return redirect()->route('users.index');
+        return redirect()->route('users.index')->with('flash_message', '更新されました！');
     }
 
     /**
@@ -126,12 +137,27 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+    //退会処理。ユーザー情報を消している。
     public function destroy($id)
     {
         $user = Auth::user();
-
         $user->delete();
+        if(Auth::id() !== $user->id) {
+            return abort(403);
+        }
+        return redirect()->route('home');
+        // return view('index');
+        // return redirect()->route('users.index');
+    }
 
-        return redirect()->route('users.index');
+    public function search()
+    {
+        return view('users.search');
+    }
+
+    //第一優先
+    public function __construct()
+    {
+        $this->middleware('auth')->except('index');
     }
 }

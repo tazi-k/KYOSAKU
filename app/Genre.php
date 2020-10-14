@@ -9,4 +9,9 @@ class Genre extends Model
     protected $fillable = [
         'genre_name'
     ];
+
+    public function users()
+    {
+        return $this->belongsToMany('App\User')->withTimestamps();
+    }
 }
