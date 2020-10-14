@@ -27,6 +27,7 @@ class UserController extends Controller
         {
             $genre = Genre::with('users')->find($request->genre_id);
         }
+        // dd($genre);
         $users = User::where('age','>',9)->orderBy('created_at','desc')->paginate(5);
         return view('users.index', compact('users','genre'));
     }
@@ -98,7 +99,7 @@ class UserController extends Controller
     public function update(UserRequest $request)
     {
         $user = Auth::user();
-        if($user->image_path === null && $request->file === null){
+        if($user->image_path === null && $request->file('image') === null){
             return redirect()->route('users.edit',$user->id)->with('flash_message','トップ画像は必須です');
         }
         $user->genres()->detach($user->genre_id);
@@ -144,11 +145,18 @@ class UserController extends Controller
         if(Auth::id() !== $user->id) {
             return abort(403);
         }
-        return redirect()->route('users.index');
+        return view('welcome');
+        // return redirect()->route('users.index');
     }
 
     public function search()
     {
         return view('users.search');
+    }
+
+    //第一優先
+    public function __construct()
+    {
+        $this->middleware('auth')->except('index');
     }
 }

@@ -20,8 +20,21 @@
     
 
     <!-- Styles -->
+
+    <link href="{{ asset('css/main.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/animate.css') }}" rel="stylesheet">
+    {{-- <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet"> --}}
+    <link href="{{ asset('css/flexslider.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/jquery.fancybox.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/line-icon.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/owl.carousel.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/owl.theme.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/owl.transitions.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/responsive.css') }}" rel="stylesheet">
+
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+    
     
 </head>
 
@@ -29,7 +42,7 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="{{ route('users.index') }}">
+                <a class="navbar-brand" href="{{ url('/') }}">
                     KYOSAKU
                 </a>
                 <a class="navbar-brand" href="{{ route('users.index') }}">
@@ -79,7 +92,7 @@
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                     document.getElementById('logout-form').submit();">
-                                    {{ __('Logout') }}
+                                    {{ __('ログアウト') }}
                                 </a>
 
                                 <a class="dropdown-item" href="{{ route('users.edit', Auth::id()) }}">

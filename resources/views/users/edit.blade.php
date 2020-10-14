@@ -32,6 +32,7 @@
                             <div class="form-group mt-5 mr-4 pr-5">
                                 <label>
                                     @if($user->image_path)
+                                    <h5><span class="badge badge-danger">必須</span></h5>
                                     <img src="{{ $user->image_path }}" alt="画像" style="max-width: 150px; margin-left: 60px;">
                                     <input type="file" class="form-control-file" id="image" name="image">
                                     @else
@@ -52,7 +53,7 @@
                                         <td>
                                             <div class="form-group">
                                                 <input type="text" class="form-control" placeholder="アーティスト名"
-                                                    value="{{ $user->name }}" name="name">
+                                                    value="{{old('name',$user->name) }}" name="name">
                                             </div>
                                         </td>
                                     </tr>
@@ -105,7 +106,7 @@
                                         <td>
                                             <div class="form-group">
                                                 <input type="text" class="form-control" placeholder="過去作品のリンク"
-                                                    value="{{ $user->work_link }}" name="work_link">
+                                                    value="{{old('work_link',$user->work_link) }}" name="work_link">
                                             </div>
                                         </td>
                                     </tr>
@@ -117,7 +118,7 @@
                                         <td>
                                             <div class="form-group">
                                                 <input type="text" class="form-control" placeholder="Eメールアドレス"
-                                                    value="{{ $user->email }}" name="email">
+                                                    value="{{old('email',$user->email) }}" name="email">
                                             </div>
                                         </td>
                                     </tr>
@@ -127,7 +128,7 @@
                                         <td>
                                             <div class="form-group">
                                                 <input type="text" class="form-control" placeholder="SNSのリンク"
-                                                    value="{{ $user->sns_link }}" name="sns_link">
+                                                    value="{{old('sns_link',$user->sns_link) }}" name="sns_link">
                                             </div>
                                         </td>
                                     </tr>
@@ -136,7 +137,7 @@
                                         <td>
                                             <div class="form-group">
                                                 <input type="text" class="form-control" placeholder="本サイトでの作品のリンク"
-                                                    value="{{ $user->collaboration_link }}" name="collaboration_link">
+                                                    value="{{old( 'collaboration_link',$user->collaboration_link) }}" name="collaboration_link">
                                             </div>
                                         </td>
                                     </tr>
