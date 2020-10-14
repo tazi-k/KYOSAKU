@@ -1,3 +1,4 @@
+ feature/#42-create-readme-
 ##  開発環境
 
 - PHP
@@ -39,3 +40,5 @@
 
 ##  ブラウザでアクセス
 http://kyosaku.herokuapp.com/
+
+ master
