@@ -23,7 +23,7 @@
 <body>
 <!-- header section -->
 <section class="banner" role="banner">
-  <header id="header">
+  <header id="header" style="padding-top: 20px;">
     <div class="header-content clearfix"> <a class="logo" href="#">
       <h2 style="color: white">KYOSAKU</h2>
     </a> 
