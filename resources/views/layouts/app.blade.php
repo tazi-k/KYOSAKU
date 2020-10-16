@@ -17,8 +17,7 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     
-    {{-- <link rel="icon" href="{{ asset('/favicon.ico') }}" /> --}}
-    <link rel="icon" type="image/png" sizes="48x48" href="/favicon.ico">
+    
 
     <!-- Styles -->
 
