@@ -1,4 +1,8 @@
 @extends('layouts.app')
+<head>
+    {{-- favicon --}}
+<link rel="icon" type="image/png" sizes="48x48" href="../images/favicon.ico">
+</head>
 
 @section('content')
 <style>
