@@ -8,7 +8,7 @@
             <div class="alert alert-danger">
                 <ul>
                     @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
+                    <li>{{ $error }}</li>
                     @endforeach
                 </ul>
             </div>
@@ -25,7 +25,7 @@
             <form action="{{ route('chats.store',$room) }}" method="POST">
                 {{csrf_field()}}
                 <div class="form-group">
-                    <label>内容</label>
+                    <label></label>
                     <textarea class="form-control" placeholder="内容" rows="5" name="body"></textarea>
                 </div>
                 <input type="hidden" name="matching" value="{{ $matching->id }}">

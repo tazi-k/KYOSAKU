@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>KYOSAKU</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -34,13 +34,70 @@
 
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+
+{{-- favicon --}}
+<link rel="icon" type="image/png" sizes="48x48" href="../images/favicon.ico">
     
     
 </head>
 
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <header id="header">
+            <div class="header-content clearfix"> <a class="logo" href="/">
+              <h2 style="color: white">KYOSAKU</h2>
+            </a> 
+              
+              <!-- navigation section  -->
+              <nav class="navigation" role="navigation">
+                <ul class="primary-nav">
+                  <li><a href="{{ route('users.index') }}">アーティスト</a></li>
+                  <li><a class="navbar-brand" href="{{ route('matching.index',Auth::id()) }}" method="GET">
+                    {{ __('共作状況') }}
+                </a></li>
+                  <li><a class="navbar-brand" href="{{ route('users.search')}}" method="GET">
+                    {{ __('ジャンル検索') }}
+                </a></li>
+                  <li>
+                    <!-- Authentication Links -->
+                    <div style="margin-right: -40px; margin-left: 60px">
+                        
+                        <img class="float-test" src="{{ Auth::user()->image_path }}" 　width="50" height="50" class="profile-img">
+                    </div>
+                    <li class="nav-item dropdown">
+                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            {{ Auth::user()->name }} <span class="caret"></span>
+                        </a>
+
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            <a style="color: black; margin-left: 0; text-align:center" class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                document.getElementById('logout-form').submit();">
+                                {{ __('ログアウト') }}
+                            </a>
+
+                            <a style="color: black; margin-left: 0; text-align:center" class="dropdown-item" href="{{ route('users.edit', Auth::id()) }}">
+                                {{ __('プロフィール編集') }}
+                            </a>
+
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                style="display: none;">
+                                @csrf
+                            </form>
+                        </div>
+                    </li>
+                </ul>
+              </nav>
+              <a href="#" class="nav-toggle">Menu<span></span></a> </div>
+            <!-- navigation section  --> 
+          </header>
+
+
+
+
+
+
+        {{-- <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     KYOSAKU
@@ -109,7 +166,7 @@
                     </ul>
                 </div>
             </div>
-        </nav>
+        </nav> --}}
 
         <main class="py-4 user-background">
             @yield('content')

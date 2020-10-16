@@ -18,12 +18,14 @@
 <link rel="stylesheet" href="css/animate.min.css">
 <link rel="stylesheet" href="css/line-icon.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+{{-- favicon --}}
+<link rel="icon" type="image/png" sizes="48x48" href="../images/favicon.ico">
 </head>
 
 <body>
 <!-- header section -->
 <section class="banner" role="banner">
-  <header id="header">
+  <header id="header" style="padding-top: 20px;">
     <div class="header-content clearfix"> <a class="logo" href="#">
       <h2 style="color: white">KYOSAKU</h2>
     </a> 
