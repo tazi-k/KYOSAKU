@@ -18,6 +18,8 @@
 <link rel="stylesheet" href="css/animate.min.css">
 <link rel="stylesheet" href="css/line-icon.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+{{-- favicon --}}
+<link rel="icon" type="image/png" sizes="48x48" href="../images/favicon.ico">
 </head>
 
 <body>
