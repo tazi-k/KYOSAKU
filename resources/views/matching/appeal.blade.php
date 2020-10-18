@@ -62,8 +62,8 @@
                                     <tr>
                                         <th scope="row">お住まい</th>
                                         <td>
-                                            {{ dd($messageToMe) }}
-                                            {{ $messageToMe->from_user->prefecture_name }}
+                                            {{-- {{ dd($messageToMe) }} --}}
+                                            {{ $messageToMe->from_user->prefecture_id }}
                                         </td>
                                     </tr>
 
