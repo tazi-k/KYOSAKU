@@ -60,19 +60,29 @@
                     {{ __('ジャンル検索') }}
                 </a></li>
                 @endAuth
-                @guest
-                @else
-                  <li>
+                    <li>
                     <!-- Authentication Links -->
-                    <div style="margin-right: -40px; margin-left: 60px">
-                        
-                        <img class="float-test" src="{{ Auth::user()->image_path }}" 　width="50" height="50" class="profile-img">
-                    </div>
-                    <li class="nav-item dropdown">
-                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                            {{ Auth::user()->name }} <span class="caret"></span>
-                        </a>
+                    
+
+                        @guest
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('login') }}">{{ __('ログイン') }}</a>
+                        </li>
+                        @if (Route::has('register'))
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('register') }}">{{ __('新規登録') }}</a>
+                        </li>
+                        @endif
+                        @else
+
+                        <div style="margin-right: -40px; margin-left: 60px">
+                            <img class="float-test" src="{{ Auth::user()->image_path }}" 　width="50" height="50" class="profile-img">
+                        </div>
+                        <li class="nav-item dropdown">
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                {{ Auth::user()->name }} <span class="caret"></span>
+                            </a>
 
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                             <a style="color: black; margin-left: 0; text-align:center" class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
