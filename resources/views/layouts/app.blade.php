@@ -52,12 +52,16 @@
               <nav class="navigation" role="navigation">
                 <ul class="primary-nav">
                   <li><a href="{{ route('users.index') }}">アーティスト</a></li>
+                  @Auth
                   <li><a class="navbar-brand" href="{{ route('matching.index',Auth::id()) }}" method="GET">
                     {{ __('共作状況') }}
                 </a></li>
                   <li><a class="navbar-brand" href="{{ route('users.search')}}" method="GET">
                     {{ __('ジャンル検索') }}
                 </a></li>
+                @endAuth
+                @guest
+                @else
                   <li>
                     <!-- Authentication Links -->
                     <div style="margin-right: -40px; margin-left: 60px">
@@ -86,6 +90,7 @@
                             </form>
                         </div>
                     </li>
+                    @endguest
                 </ul>
               </nav>
               <a href="#" class="nav-toggle">Menu<span></span></a> </div>
