@@ -59,11 +59,18 @@
                                             {{ $messageToMe->from_user->age }}
                                         </td>
                                     </tr>
+
                                     <tr>
                                         <th scope="row">お住まい</th>
                                         <td>
-                                            {{-- {{ dd($messageToMe) }} --}}
-                                            {{ $messageToMe->from_user->prefecture_id }}
+                                            {{ $fromUserPrefecture->prefecture_name }}
+                                        </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <th scope="row">ジャンル</th>
+                                        <td>
+                                            {{ $fromUserGenre->genre_name }}
                                         </td>
                                     </tr>
 

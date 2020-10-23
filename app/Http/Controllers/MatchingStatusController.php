@@ -4,9 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\MatchingStatus;
+use App\Prefecture;
 use Auth;
 use App\User;
 use Mail;
+use App\Genre;
 
 
 class MatchingStatusController extends Controller
@@ -78,7 +80,11 @@ class MatchingStatusController extends Controller
     {
         $messageToMe = MatchingStatus::find($getUser);
         $messageToMe->load('from_user');
-        return view('matching.appeal',compact('messageToMe'));
+        // dd($messageToMe);
+        $fromUserGenre = Genre::find($messageToMe->from_user->id);
+        // $authPrefecture = Auth::user($id)->load('prefecture');
+        $fromUserPrefecture = Prefecture::find($messageToMe->from_user->prefectures_id);
+        return view('matching.appeal',compact('messageToMe','fromUserPrefecture','fromUserGenre'));
     }
 
     //依頼に対しての返答処理。(status更新)
