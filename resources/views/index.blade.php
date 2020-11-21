@@ -17,6 +17,7 @@
 <link rel="stylesheet" href="css/responsive.css">
 <link rel="stylesheet" href="css/animate.min.css">
 <link rel="stylesheet" href="css/line-icon.css">
+<link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 {{-- favicon --}}
 <link rel="icon" type="image/png" sizes="48x48" href="../images/favicon.ico">
@@ -42,27 +43,11 @@
     <!-- navigation section  --> 
   </header>
   <!-- banner text section-->
-  <!-- <div id="banner" class="container">
-      <div class="row justify-content-center col-sm-12" style="margin-top: -200px;">
-          <div class="banner-text">
-            <div class="banner-text-back" style="width: 700px; padding: 70px;">
-              <h2 style="color: white; padding-top: 40px;">繋がり<br>
-                さらなる高みへ。</h2><br>
-                <h1>「KYOSAKU」</h1>
-              <p>KYOSAKUは<br>
-                音楽×イラスト<br>
-                アーティスト同士のマッチングサイトです。<br>
-                作品公開しているなら誰でも利用できます。</p>
-            </div>
-        </div>
-      </div>
-    </div>
-  </div> -->
   <div id="banner" class="container">
       <div class="row justify-content-center col-sm-12" style="margin-top: -200px;">
           <div class="banner-text">
-            <div class="banner-text-back" style="width: 700px; padding: 70px;">
-              <h2 style="color: white; padding-top: 40px; line-height: 40px">繋がり<br>
+            <div class="banner-text-back">
+              <h2>繋がり<br>
                 さらなる高みへ。</h2><br>
                 <h1>「KYOSAKU」</h1>
               <p style="line-height: 40px">KYOSAKUは<br>
@@ -86,9 +71,9 @@
       </div>
     </div>
     <div class="row" style="text-align: center;">
-      <div class="col-md-4 col-sm-12" style="margin-left: 410px; margin-top: 80px;"> 
+      <div class="text2 col-md-4"> 
         <div class="overview-content">
-          <h4 style="padding-right: 40px; font-size: 25px">マッチング</h4>
+          <h4>マッチング</h4>
           <p style="line-height: 30px; font-size: 15px">基本機能はいたってシンプル！<br>
             無料で、今後一緒に活動していきたい仲間<br>
             を見つけることができます。<br>
@@ -110,7 +95,7 @@
       </div>
     </div>
       <div class="col-md-6">
-        <div class="features2-content" style="margin-left: 180px">
+        <div class="features2-content1">
           <h2 class="section-title" style="font-size: 30px;">全て無料</h2>
           <p style="line-height: 28px">当サービスは全て無料です。<br>
             あくまで異分野同士で<br>
@@ -131,7 +116,7 @@
   <div class="container" style="padding-bottom: 100px;">
     <div class="row">
       <div class="col-md-6" style="float:right;">
-        <div class="features2-content" style="margin-left: 100px">
+        <div class="features2-content2">
           <h2 class="section-title" style="font-size: 30px;">実力派同士が繋がれる</h2>
           <p style="line-height: 28px; margin-right: -10px">ここが最大の肝となります。<br>
             実力のある人とマッチするためには、自分自身の実力も必要です。<br>
