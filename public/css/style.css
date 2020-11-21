@@ -334,7 +334,7 @@
 
     .subscribe {
       width:100%;
-      background-image:url('https://i.pinimg.com/564x/1e/9f/6a/1e9f6a4d526c9de7f6a53a31ba92f501.jpg');
+      background-image:url('https://i.pinimg.com/564x/9d/47/e1/9d47e1492c206a5736a92eafb93d040b.jpg');
       background-attachment: fixed;
       background-repeat: no-repeat;
       background-position: 50% 0;
@@ -346,7 +346,7 @@
     }
 
     .overlay {
-      /* background-color: rgba(54, 115, 173, 0.589); */
+      background-color: rgba(54, 115, 173, 0.589);
       height: 100%;
       left: 0;
       position: absolute;
