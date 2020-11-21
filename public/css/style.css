@@ -290,6 +290,8 @@
   }
 
 
+
+
   @media screen and (max-width: 480px) {
     /* 480px以下に適用されるCSS（スマホ用） */
 
@@ -332,21 +334,8 @@
       margin-left: 0px;
     }
 
-    .subscribe {
-      width:100%;
-      background-image:url('https://i.pinimg.com/564x/76/f7/d8/76f7d819b603439fbabdaf42ad01a1f0.jpg');
-      background-attachment: fixed;
-      background-repeat: no-repeat;
-      background-position: 50% 0;
-      -webkit-background-size: cover;
-      -moz-background-size: cover;
-      -o-background-size: cover;
-      background-size: cover;
-      position: relative;
-    }
-
-    .overlay {
-      /* background-color: rgba(54, 115, 173, 0.589); */
+    .overlay{
+      background-color: #33b4c09a;
       height: 100%;
       left: 0;
       position: absolute;
@@ -354,5 +343,9 @@
       top: 0;
       width: 100%;
     }
-    
+    .subscribe {
+      background-image:url('https://i.pinimg.com/564x/9d/47/e1/9d47e1492c206a5736a92eafb93d040b.jpg');
+      
+    }
+
   }
