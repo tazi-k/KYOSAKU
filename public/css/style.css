@@ -346,7 +346,7 @@
     }
 
     .overlay {
-      background-color: rgba(54, 115, 173, 0.589);
+      /* background-color: rgba(54, 115, 173, 0.589); */
       height: 100%;
       left: 0;
       position: absolute;
