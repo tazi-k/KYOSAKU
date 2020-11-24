@@ -27,12 +27,12 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         // ローカルの時はif消す
-        if(env('APP_ENV') === 'production')
-        {
-            $genres_music = Genre::where('id','<',141)->get();
-            $genres_illustration = Genre::where('id','>',131)->get();
-            View::share(compact('genres_music','genres_illustration'));
-        }
+        // if(env('APP_ENV') === 'production')
+        // {
+        //     $genres_music = Genre::where('id','<',141)->get();
+        //     $genres_illustration = Genre::where('id','>',131)->get();
+        //     View::share(compact('genres_music','genres_illustration'));
+        // }
 
         $genres_music = Genre::where('id','<',15)->get();
             $genres_illustration = Genre::where('id','>',14)->get();
