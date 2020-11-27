@@ -309,9 +309,9 @@
     }
 
     .banner{
-      background-image: url("https://i.pinimg.com/564x/e8/24/4f/e8244f25c90ea65d67d0c82ef37556dc.jpg");
+      /* background-image: url("https://i.pinimg.com/564x/e8/24/4f/e8244f25c90ea65d67d0c82ef37556dc.jpg");
       background-size: cover;
-      width: 100%;
+      width: fit-content; */
     }
 
     body {
