@@ -462,7 +462,8 @@ ul li {
 @media screen and (min-width: 481px){
 
 	.overlay {
-	background-color: rgba(115, 194, 226, 0.815);
+	/* background-color: rgba(115, 194, 226, 0.815); */
+	background-color: rgba(236, 38, 24, 0.815);
 	height: 100%;
 	left: 0;
 	position: absolute;
@@ -480,7 +481,7 @@ ul li {
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
-	background-size: cover;
+  background-size: contain;
 	position: relative;
 }
 .subscribe h2 {
