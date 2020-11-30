@@ -34,13 +34,15 @@ class AppServiceProvider extends ServiceProvider
             View::share(compact('genres_music','genres_illustration'));
         }
 
-        // $genres_music = Genre::where('id','<',15)->get();
-        //     $genres_illustration = Genre::where('id','>',14)->get();
-        //     View::share(compact('genres_music','genres_illustration'));
+        $genres_music = Genre::where('id','<',15)->get();
+            $genres_illustration = Genre::where('id','>',14)->get();
+            View::share(compact('genres_music','genres_illustration'));
 
         if ($this->app->environment() === 'production') {
                 \URL::forceScheme('https');
             }
             Schema::defaultStringLength(191);
+            
+
     }
 }

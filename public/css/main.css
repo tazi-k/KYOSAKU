@@ -459,6 +459,7 @@ ul li {
 /* ------------------------------------------------------------------------------
 	Subscribe
 -------------------------------------------------------------------------------*/
+@media screen and (min-width: 992px){
 
 	.overlay {
 	background-color: rgba(115, 194, 226, 0.815);
@@ -469,6 +470,7 @@ ul li {
 	top: 0;
 	width: 100%;
 }
+
 .subscribe {
 	width:100%;
 	background-image:url('https://cdn.pixabay.com/photo/2020/05/23/04/28/boy-5207984_1280.jpg');
@@ -478,8 +480,9 @@ ul li {
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
-	background-size: cover;
+  background-size: cover;
 	position: relative;
+}
 }
 .subscribe h2 {
 	margin-top: 0;
