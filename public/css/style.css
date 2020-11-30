@@ -293,12 +293,13 @@
 
 
   @media screen and (max-width: 767px) {
-    /* 480px以下に適用されるCSS（スマホ用） */
+    /* 767px以下に適用されるCSS（スマホ用） */
 
     .banner-text-back{
-      width: 400px;
+      width: 100%;
       text-align: center;
-      margin-left: 20px;
+      padding-left: 10px;
+      padding-right: 10px;
       margin-top: 200px;
       padding-top: 0px;
       padding-bottom: 10px;
@@ -309,6 +310,8 @@
     }
 
     .banner{
+      max-width: 100%;
+      height: auto;
       background-image: url("https://i.pinimg.com/564x/e8/24/4f/e8244f25c90ea65d67d0c82ef37556dc.jpg");
       background-size: cover;
       width: fit-content;
@@ -336,8 +339,6 @@
 
     .overlay{
       background-color: #33b4c09a;
-      /* background-color: rgba(236, 38, 24, 0.815); */
-
       height: 100%;
       left: 0;
       position: absolute;
@@ -346,7 +347,8 @@
       width: 100%;
     }
     .subscribe {
-      width: 100%;
+      max-width: 100%;
+      height: auto;
       background-image:url('https://i.pinimg.com/564x/9d/47/e1/9d47e1492c206a5736a92eafb93d040b.jpg');
       background-attachment: fixed;
       background-repeat: no-repeat;
