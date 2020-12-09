@@ -39,7 +39,6 @@
                         {{ $genre->genre_name }}のユーザー
                     </h3>
                 </div>
-
                 <div class="container">
                     <div class="row justify-content-center">
                         @foreach ($genre->users as $genre_user)

@@ -137,7 +137,7 @@
 
 <!--subscribe section -->
 <section id="download" class="section subscribe">
-  <img src="https://i.pinimg.com/564x/9d/47/e1/9d47e1492c206a5736a92eafb93d040b.jpg">
+  {{-- <img src="https://i.pinimg.com/564x/9d/47/e1/9d47e1492c206a5736a92eafb93d040b.jpg"> --}}
   <div class="overlay"></div>
   <div class="container">
     <div class="row">
