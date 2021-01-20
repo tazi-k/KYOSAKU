@@ -132,12 +132,10 @@
 </section>
 <!-- feature section 2 --> 
 
-
 <!-- screen shots slider section --> 
 
 <!--subscribe section -->
 <section id="download" class="section subscribe">
-  {{-- <img src="https://i.pinimg.com/564x/9d/47/e1/9d47e1492c206a5736a92eafb93d040b.jpg"> --}}
   <div class="overlay"></div>
   <div class="container">
     <div class="row">
@@ -166,20 +164,20 @@
 
 <!--contact section -->
 
-<section id="contact" class="section text-center">
+<section id="contact" class="section text-center let">
+  <div class="overlay2"></div>
   <div class="container">
     <div class="row">
       <div class="col-md-8 col-md-offset-2 ">
-        <h2 class="section-title">さっそく始めよう！</h2>
+        <h2 class="section-title" style="color: rgb(17, 14, 206); text-shadow: 1px 2px 0px rgba(0, 0, 0, 0.445);">KYOSAKUの世界へ</h2>
         <div class="text-center">
-          <form action="{{ route('register') }}">
-          <button type="submit" class="btn btn-primary mt-5 mb-4" style="font-size: 20px; margin-top: 60px">始める！</button>
-          </form>
+          {{-- <form action="{{ route('register') }}"> --}}
+            <a href="{{ route('register') }}" class="btn24 btn24-flat mt-5 mb-4" style="font-size: 20px; margin-top: 60px"><span>START</span></a>
+          {{-- <button type="submit" class="btn btn-primary mt-5 mb-4" style="font-size: 20px; margin-top: 60px">始める！</button> --}}
+          {{-- </form> --}}
           </div>
       </div>
     </div>
-    
-    
   </div>
 </section>
 

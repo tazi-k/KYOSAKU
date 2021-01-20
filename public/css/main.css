@@ -690,4 +690,78 @@ ul li {
 	font-size: 11px;
 	margin: 0 2px;
 }
+.let{
+	/* background-image: url('https://cdn.pixabay.com/photo/2018/05/11/09/29/glass-3389935_1280.jpg'); */
+	/* background-image: url('https://cdn.pixabay.com/photo/2021/01/02/12/40/technology-5881448_1280.jpg'); */
+	background-image: url('https://cdn.pixabay.com/photo/2016/05/25/07/56/start-1414148_1280.jpg');
+	background-size: cover;
+	background-position: left 0% top 17%;
+	/* position: relative; */
+}
+.overlay2{
+	background-color: rgba(255, 255, 255, 0.705);
+	height: 357px;
+	left: 0;
+	position: absolute;
+	width: 100%;
+	margin-top: -100px;
+}
 
+
+
+.btn24,
+a.btn24,
+button.btn24 {
+	padding: 10px 30px;
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1.5;
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  color: #212529;
+  border-radius: 0.5rem;
+}
+
+a.btn24-flat {
+  overflow: hidden;
+  color: #fff;
+  border-radius: 0;
+  background: #000;
+}
+
+a.btn24-flat span {
+  position: relative;
+}
+
+a.btn24-flat:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 150%;
+  height: 500%;
+
+  content: "";
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  -webkit-transform: translateX(-98%) translateY(-25%) rotate(45deg);
+  transform: translateX(-98%) translateY(-25%) rotate(45deg);
+
+  background: #00b7ee;
+}
+
+a.btn24-flat:hover:before {
+  -webkit-transform: translateX(-9%) translateY(-25%) rotate(45deg);
+  transform: translateX(-9%) translateY(-25%) rotate(45deg);
+}
