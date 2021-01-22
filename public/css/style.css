@@ -365,5 +365,10 @@
       -o-background-size: cover;
       background-size: cover;
       position: relative;
+
+      display:block;
+      top:0;
+      left:0;
+      height:100vh;
     }
   }
