@@ -360,7 +360,7 @@
       position: relative;
       width: fit-content;
       height: fit-content;
-      transform: translate3d(0, 0, 0);
+      
     }
 
     .subscribe2 h2{
