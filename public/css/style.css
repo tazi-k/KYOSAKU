@@ -354,16 +354,8 @@
     }
 
     .subscribe2{
-      position: fixed;
-      width: 100%;
       background-image: url("https://i.pinimg.com/564x/9d/47/e1/9d47e1492c206a5736a92eafb93d040b.jpg");
-      
       background-attachment: fixed;
-      background-repeat: no-repeat;
-      background-position: 50% 0;
-      /* -webkit-background-size: cover;
-      -moz-background-size: cover;
-      -o-background-size: cover; */
       background-size: cover;
       position: relative;
     }
