@@ -459,9 +459,8 @@ ul li {
 /* ------------------------------------------------------------------------------
 	Subscribe
 -------------------------------------------------------------------------------*/
-@media screen and (min-width: 992px){
 
-	.overlay {
+	.overlay1 {
 	background-color: rgba(115, 194, 226, 0.815);
 	height: 100%;
 	left: 0;
@@ -483,7 +482,7 @@ ul li {
   background-size: cover;
 	position: relative;
 }
-}
+
 .subscribe h2 {
 	margin-top: 0;
 	color: #fff;

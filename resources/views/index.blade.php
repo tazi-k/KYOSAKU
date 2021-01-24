@@ -145,8 +145,8 @@
 <!-- screen shots slider section --> 
 
 {{-- PC用 --}}
-<section id="download" class="section subscribe">
-  <div class="overlay"></div>
+<section id="download" class="section subscribe d-none d-md-block">
+  <div class="overlay1"></div>
   <div class="container">
     <div class="row">
       <div class="col-md-8 col-md-offset-2 text-center">
@@ -164,8 +164,8 @@
 </section>
 
 {{-- スマホ用 --}}
-{{-- <section id="download" class="section subscribe d-none d-sm-block d-md-none">
-  <div class="overlay"></div>
+<section id="download" class="section subscribe2 d-sm-block d-md-none">
+  <div class="overlay3"></div>
   <div class="container">
     <div class="row">
       <div class="col-md-8 col-md-offset-2 text-center">
@@ -180,7 +180,7 @@
       </div>
     </div>
   </div>
-</section> --}}
+</section>
 
 <section id="contact" class="section text-center let">
   <div class="overlay2"></div>
