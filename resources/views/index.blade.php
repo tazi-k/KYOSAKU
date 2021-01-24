@@ -19,8 +19,18 @@
 <link rel="stylesheet" href="css/line-icon.css">
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+<script src="js/bootstrap.min.js"></script>
+
 {{-- favicon --}}
 <link rel="icon" type="image/png" sizes="48x48" href="../images/favicon.ico">
+
+<!-- BootstrapのCSS読み込み -->
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<!-- jQuery読み込み -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<!-- BootstrapのJS読み込み -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -134,7 +144,7 @@
 
 <!-- screen shots slider section --> 
 
-<!--subscribe section -->
+{{-- PC用 --}}
 <section id="download" class="section subscribe">
   <div class="overlay"></div>
   <div class="container">
@@ -150,19 +160,27 @@
           一人でも多くの人が、本サイトから飛躍するのを願っています。</p>
       </div>
     </div>
-        <!-- subscribe form -->
-        
-        <!-- subscribe message -->
-        <div id="mesaj"></div>
-        <!-- subscribe message --> 
-      </div>
-      <!-- subscribe form --> 
-    </div>
   </div>
 </section>
-<!--subscribe section --> 
 
-<!--contact section -->
+{{-- スマホ用 --}}
+{{-- <section id="download" class="section subscribe d-none d-sm-block d-md-none">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2 text-center">
+        <h2 style="font-size: 35px;">心境</h2>
+        <p style="line-height: 35px; font-size:18px;">この世の中には、知名度はないけどカッコいい！<br>
+          と思う人が山ほどいます。<br>
+          そういった人の後押しになりたい。<br>
+          可能性を少しでも広げたい。<br>
+          この一心で本サイトを作成しました。<br>
+          無料で、実力さえあれば他の分野のアーティストと繋がれる。<br><br>
+          一人でも多くの人が、本サイトから飛躍するのを願っています。</p>
+      </div>
+    </div>
+  </div>
+</section> --}}
 
 <section id="contact" class="section text-center let">
   <div class="overlay2"></div>
