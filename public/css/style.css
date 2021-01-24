@@ -361,9 +361,9 @@
       background-attachment: fixed;
       background-repeat: no-repeat;
       background-position: 50% 0;
-      -webkit-background-size: cover;
+      /* -webkit-background-size: cover;
       -moz-background-size: cover;
-      -o-background-size: cover;
+      -o-background-size: cover; */
       background-size: cover;
       position: relative;
     }
