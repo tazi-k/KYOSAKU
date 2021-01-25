@@ -373,6 +373,8 @@
       display:block;
       position:fixed;
       z-index:-1;
+      height:100vh;
+      background-size:cover;
     }
 
     .subscribe2 h2{
