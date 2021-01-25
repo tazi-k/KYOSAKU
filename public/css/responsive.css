@@ -67,6 +67,7 @@ margin:auto;
 }
 #overview {
 text-align:center;
+background-color: white;
 }
 .overview-content p {
 padding-right:0px;
