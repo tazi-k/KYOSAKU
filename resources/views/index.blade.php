@@ -173,7 +173,7 @@
 
     {{-- スマホ用 --}}
     <section id="download" class="section subscribe2 d-sm-block d-md-none">
-        {{-- <div class="overlay3"></div> --}}
+        <div class="overlay3"></div>
         <div class="container">
             <div class="row">
                 <div class="col-md-8 col-md-offset-2 text-center">
