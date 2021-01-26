@@ -54,7 +54,32 @@
                         <li><a href="{{ route('login') }}">ログイン</a></li>
                     </ul>
                 </nav>
-                <a href="#" class="nav-toggle">Menu<span></span></a>
+                 <!-- ハンバーガーメニュー部分 -->
+  <div class="drawer">
+
+    <!-- ハンバーガーメニューの表示・非表示を切り替えるチェックボックス -->
+    <input type="checkbox" id="drawer-check" class="drawer-hidden" >
+
+    <!-- ハンバーガーアイコン -->
+    <label for="drawer-check" class="drawer-open"><span></span></label>
+
+    <!-- メニュー -->
+    <nav class="drawer-content">
+      <ul class="drawer-list text-center">
+        <li class="drawer-item" style="margin-top: 20%">
+          <a class="humberger" href="{{ route('users.index') }}">アーティスト一覧</a>
+        </li><!-- /.drawer-item -->
+        <li class="drawer-item" style="margin-top: 3%">
+          <a class="humberger" href="{{ route('register') }}">新規登録</a>
+        </li><!-- /.drawer-item -->
+        <li class="drawer-item" style="margin-top: 3%">
+          <a class="humberger" href="{{ route('login') }}">ログイン</a>
+        </li><!-- /.drawer-item -->
+      </ul><!-- /.drawer-list -->
+    </nav>
+
+  </div>
+                {{-- <a href="#" class="nav-toggle"><span></span></a> --}}
             </div>
             <!-- navigation section  -->
         </header>
