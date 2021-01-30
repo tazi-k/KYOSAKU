@@ -74,7 +74,6 @@
                         </li>
                         @endif
                         @else
-
                         <div style="margin-right: -40px; margin-left: 60px">
                             <img class="float-test" src="{{ Auth::user()->image_path }}" 　width="50" height="50" class="profile-img">
                         </div>
@@ -117,21 +116,41 @@
     <!-- メニュー -->
     <nav class="drawer-content">
       <ul class="drawer-list text-center">
-        <li class="drawer-item" style="margin-top: 20%">
-          <a class="humberger" href="{{ route('users.index') }}">アーティスト一覧</a>
-        </li><!-- /.drawer-item -->
-        <li class="drawer-item" style="margin-top: 3%">
-          <a class="humberger" href="{{ route('register') }}">新規登録</a>
-        </li><!-- /.drawer-item -->
+        @guest
         <li class="drawer-item" style="margin-top: 3%">
           <a class="humberger" href="{{ route('login') }}">ログイン</a>
         </li><!-- /.drawer-item -->
+        @if (Route::has('register'))
         <li class="drawer-item" style="margin-top: 3%">
-          <a class="humberger" href="{{ route('logout') }}">ログアウト</a>
+            <a class="humberger" href="{{ route('register') }}">新規登録</a>
+          </li><!-- /.drawer-item -->
+        @endif
+        @else
+        <div style="margin-left:-65%; margin-top:10%">
+            <img class="float-test" src="{{ Auth::user()->image_path }}" 　width="50" height="50" class="profile-img">
+        </div>
+        @endguest
+        
+        <li class="drawer-item" style="margin-top: -5%; margin-left: -30%">
+            <a class="humberger" href="{{ route('users.edit', Auth::id()) }}">編集</a>
+          </li><!-- /.drawer-item -->
+        <li class="drawer-item" style="margin-top: 10%">
+          <a class="humberger" href="{{ route('users.index') }}">アーティスト一覧</a>
         </li><!-- /.drawer-item -->
+
+        @Auth
+        <li class="drawer-item" style="margin-top: 3%">
+            <a class="humberger" href="{{ route('matching.index',Auth::id()) }}" method="GET">共作状況</a>
+        </li>
+        <li class="drawer-item" style="margin-top: 3%">
+            <a class="humberger" href="{{ route('users.search')}}" method="GET">ジャンル検索</a>
+        </li>
+        <li class="drawer-item" style="margin-top: 3%" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+            <a class="humberger">ログアウト</a>
+        </li><!-- /.drawer-item -->
+        @endAuth
       </ul><!-- /.drawer-list -->
     </nav>
-
   </div>
 
 
