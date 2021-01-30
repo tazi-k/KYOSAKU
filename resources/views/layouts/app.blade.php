@@ -130,10 +130,11 @@
             <img class="float-test" src="{{ Auth::user()->image_path }}" 　width="50" height="50" class="profile-img">
         </div>
         @endguest
-        
+        @Auth
         <li class="drawer-item" style="margin-top: -5%; margin-left: -30%">
             <a class="humberger" href="{{ route('users.edit', Auth::id()) }}">編集</a>
           </li><!-- /.drawer-item -->
+        @endAuth
         <li class="drawer-item" style="margin-top: 10%">
           <a class="humberger" href="{{ route('users.index') }}">アーティスト一覧</a>
         </li><!-- /.drawer-item -->
