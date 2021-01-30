@@ -295,6 +295,11 @@
   @media screen and (max-width: 767px) {
     /* 767px以下に適用されるCSS（スマホ用） */
 
+    .features2 img {
+      bottom: 0px;
+      padding-left:0%;
+    }
+
     .banner-text-back{
       width: 100%;
       text-align: center;
@@ -351,7 +356,7 @@
     }
 }
     .overlay3{
-      background-color: #33b4c09a;
+      background-color: #33b4c0ab;
       height: 100%;
       left: 0;
       position: absolute;

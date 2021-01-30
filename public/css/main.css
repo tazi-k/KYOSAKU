@@ -119,6 +119,7 @@ ul li {
 }
 .img-responsive {
 	margin:auto;
+	
 }
 /* ------------------------------------------------------------------------------
 	Header
@@ -446,6 +447,10 @@ ul li {
 	padding-bottom:0;
 }
 .features3 img {
+	bottom: -100px;
+	padding-left:15%;
+}
+.features2 img {
 	bottom: -100px;
 	padding-left:15%;
 }

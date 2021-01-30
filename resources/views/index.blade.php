@@ -133,16 +133,18 @@
                     <h3>ここならではでの出来ること</h3>
                 </div>
             </div>
-            <div class="col-md-6">
-                <div class="features2-content1 d-none d-md-block">
+            <div class="col-md-6" style="margin-top: 5%">
+                {{-- PC用 --}}
+                <div class="features2-content1 d-none d-md-block" style="margin-left: 100px;">
                     <h2 class="section-title" style="font-size: 30px;">全て無料</h2>
-                    <p style="line-height: 28px">当サービスは全て無料です。<br>
+                    <p style="line-height: 32px; font-size:16px; margin-top:10%;">当サービスは全て無料です。<br>
                         あくまで異分野同士で<br>
                         「繋がり、さらなる高み」<br>
                         を目指すためのものなので、<br>
                         金銭は一切発生しません。
                     </p>
                 </div>
+                {{-- スマホ用 --}}
                 <div class="features2-content1 d-sm-block d-md-none">
                     <h2 class="section-title" style="font-size: 30px; margin-bottom: 20px;">全て無料</h2>
                     <p style="line-height: 30px; margin-bottom: 12%">当サービスは全て無料です。<br>
@@ -153,7 +155,7 @@
                     </p>
                 </div>
             </div>
-            <div class="col-md-6"> <img class="img-responsive"
+            <div class="col-md-6" style="margin-top: 5%"> <img class="img-responsive"
                     src="https://cdn.pixabay.com/photo/2017/08/06/12/06/people-2591874_1280.jpg"> </div>
         </div>
         </div>
@@ -168,10 +170,9 @@
                     <div class="features2-content2">
                         {{-- PC用 --}}
                         <h2 class="section-title d-none d-md-block" style="font-size: 30px;">実力派同士が繋がれる</h2>
-                        <p class="d-none d-md-block" style="line-height: 28px; margin-right: -10px">ここが最大の肝となります。<br>
-                            実力のある人とマッチするためには、自分自身の実力も必要です。<br>
-                            相手に求めるのが高いほど、自分に求められるものも高くなります。<br>
-                            そのため、必然と実力派同士がマッチングするようになっています。<br>
+                        <p class="d-none d-md-block" style="line-height: 32px; margin-right: -10px; font-size:16px; margin-top:10%;">
+                            実力のある人とマッチするためには、<br>自分自身の実力も必要です。<br>
+                            そのため、必然と実力派同士が<br>マッチングするようになっています。<br>
                             この人に本当に将来性があるか？<br>
                             自分自身がプロデューサー目線で考える必要があります。</p>
                         {{-- スマホ用 --}}
@@ -179,7 +180,7 @@
                         <p class="d-sm-block d-md-none" style="line-height: 30px; margin-right: -10px">
                             実力のある人とマッチするためには、<br>自分自身の実力も必要です。<br>
                             そのため、必然と実力派同士が<br>マッチングするようになっています。</p>
-                        <p style="line-height: 30px; margin-top:15px; margin-right: -10px; margin-bottom: 12%;">この人に本当に将来性があるか？<br>
+                        <p class="d-sm-block d-md-none" style="line-height: 30px; margin-top:15px; margin-right: -10px; margin-bottom: 12%;">この人に本当に将来性があるか？<br>
                             自身がプロデューサー目線で考える必要があります。</p>
                     </div>
                 </div>
