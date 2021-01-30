@@ -44,7 +44,7 @@
                             </div>
 
                             <table class="table table-bordered float-right col-md-5"
-                                style="margin-top: 30px; margin-right: 0px; margin-left: -40px">
+                                style="">
                                 <tbody>
 
                                     <tr>

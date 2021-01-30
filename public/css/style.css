@@ -354,6 +354,10 @@
     .banner-text-back h3{
       margin-top: 25px;
     }
+
+    .pt-4, .py-4{
+      padding-top: 27%;
+    }
 }
     .overlay3{
       background-color: #33b4c0ab;

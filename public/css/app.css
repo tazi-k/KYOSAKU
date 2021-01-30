@@ -14732,7 +14732,7 @@ button.bg-dark:focus {
 
 .pt-4,
 .py-4 {
-  padding-top: 10rem !important;
+  padding-top: 10rem;
 }
 
 .pr-4,
