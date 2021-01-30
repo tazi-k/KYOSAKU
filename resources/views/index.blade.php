@@ -170,17 +170,21 @@
                     <div class="features2-content2">
                         {{-- PC用 --}}
                         <h2 class="section-title d-none d-md-block" style="font-size: 30px;">実力派同士が繋がれる</h2>
-                        <p class="d-none d-md-block" style="line-height: 32px; margin-right: -10px; font-size:16px; margin-top:10%;">
+                        <p class="d-none d-md-block"
+                            style="line-height: 32px; margin-right: -10px; font-size:16px; margin-top:10%;">
                             実力のある人とマッチするためには、<br>自分自身の実力も必要です。<br>
                             そのため、必然と実力派同士が<br>マッチングするようになっています。<br>
                             この人に本当に将来性があるか？<br>
                             自分自身がプロデューサー目線で考える必要があります。</p>
                         {{-- スマホ用 --}}
-                        <h2 class="section-title d-sm-block d-md-none" style="font-size: 30px; margin-bottom: 20px;">実力派同士が繋がれる</h2>
+                        <h2 class="section-title d-sm-block d-md-none" style="font-size: 30px; margin-bottom: 20px;">
+                            実力派同士が繋がれる</h2>
                         <p class="d-sm-block d-md-none" style="line-height: 30px; margin-right: -10px">
                             実力のある人とマッチするためには、<br>自分自身の実力も必要です。<br>
                             そのため、必然と実力派同士が<br>マッチングするようになっています。</p>
-                        <p class="d-sm-block d-md-none" style="line-height: 30px; margin-top:15px; margin-right: -10px; margin-bottom: 12%;">この人に本当に将来性があるか？<br>
+                        <p class="d-sm-block d-md-none"
+                            style="line-height: 30px; margin-top:15px; margin-right: -10px; margin-bottom: 12%;">
+                            この人に本当に将来性があるか？<br>
                             自身がプロデューサー目線で考える必要があります。</p>
                     </div>
                 </div>
