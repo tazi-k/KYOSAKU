@@ -336,7 +336,20 @@
     .features2-content2{
       margin-left: 0px;
     }
+
+    .banner-text-back{
+      padding-left: 5%;
+      padding-right: 5%;
   }
+    .banner-text-back p{
+      white-space: nowrap;
+      font-size: 15px;
+    }
+
+    .banner-text-back h3{
+      margin-top: 25px;
+    }
+}
     .overlay3{
       background-color: #33b4c09a;
       height: 100%;
@@ -457,7 +470,7 @@
   top: 0;
   left: 100%;/* メニューを画面の外に飛ばす */
   z-index: 99;
-  background: rgba(126, 126, 126, 0.856);
+  background: rgba(126, 126, 126, 0.938);
   transition: .5s;
 }
 
@@ -467,6 +480,24 @@
 }
 
 .humberger{
-  color: rgb(7, 61, 160);
+  color: rgb(2, 13, 34);
   font-size: large;
+  text-decoration: underline
+}
+
+
+@media screen and (min-width: 767px) {
+  /* 767px以上に適用されるCSS（PC用） */
+.banner-text-back h2{
+  font-size: x-large;
+}
+
+.banner-text-back h1{
+  font-size: xx-large;
+}
+
+.banner-text-back h3{
+  font-size: large;
+}
+
 }

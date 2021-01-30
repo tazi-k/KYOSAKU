@@ -54,45 +54,43 @@
                         <li><a href="{{ route('login') }}">ログイン</a></li>
                     </ul>
                 </nav>
-                 <!-- ハンバーガーメニュー部分 -->
-  <div class="drawer">
+                <!-- ハンバーガーメニュー部分 -->
+                <div class="drawer d-sm-block d-md-none">
 
-    <!-- ハンバーガーメニューの表示・非表示を切り替えるチェックボックス -->
-    <input type="checkbox" id="drawer-check" class="drawer-hidden" >
+                    <!-- ハンバーガーメニューの表示・非表示を切り替えるチェックボックス -->
+                    <input type="checkbox" id="drawer-check" class="drawer-hidden">
 
-    <!-- ハンバーガーアイコン -->
-    <label for="drawer-check" class="drawer-open"><span></span></label>
+                    <!-- ハンバーガーアイコン -->
+                    <label for="drawer-check" class="drawer-open"><span></span></label>
 
-    <!-- メニュー -->
-    <nav class="drawer-content">
-      <ul class="drawer-list text-center">
-        <li class="drawer-item" style="margin-top: 20%">
-          <a class="humberger" href="{{ route('users.index') }}">アーティスト一覧</a>
-        </li><!-- /.drawer-item -->
-        <li class="drawer-item" style="margin-top: 3%">
-          <a class="humberger" href="{{ route('register') }}">新規登録</a>
-        </li><!-- /.drawer-item -->
-        <li class="drawer-item" style="margin-top: 3%">
-          <a class="humberger" href="{{ route('login') }}">ログイン</a>
-        </li><!-- /.drawer-item -->
-      </ul><!-- /.drawer-list -->
-    </nav>
-
-  </div>
-                {{-- <a href="#" class="nav-toggle"><span></span></a> --}}
+                    <!-- メニュー -->
+                    <nav class="drawer-content">
+                        <ul class="drawer-list text-center">
+                            <li class="drawer-item" style="margin-top: 20%">
+                                <a class="humberger" href="{{ route('users.index') }}">アーティスト一覧</a>
+                            </li><!-- /.drawer-item -->
+                            <li class="drawer-item" style="margin-top: 3%">
+                                <a class="humberger" href="{{ route('register') }}">新規登録</a>
+                            </li><!-- /.drawer-item -->
+                            <li class="drawer-item" style="margin-top: 3%">
+                                <a class="humberger" href="{{ route('login') }}">ログイン</a>
+                            </li><!-- /.drawer-item -->
+                        </ul><!-- /.drawer-list -->
+                    </nav>
+                </div>
             </div>
             <!-- navigation section  -->
         </header>
         <!-- banner text section-->
         <div id="banner" class="container">
-            <div class="row justify-content-center col-sm-12" style="margin-top: -200px;">
+            <div class="row justify-content-center" style="margin-top: -200px;">
                 <div class="banner-text">
                     <div class="banner-text-back">
                         <h2>繋がり<br>
                             さらなる高みへ。</h2><br>
-                        <h1>「KYOSAKU」</h1>
-                        <p style="line-height: 40px">KYOSAKUは<br>
-                            音楽×イラスト<br>
+                        <h1 style="font-weight: 400">「 KYOSAKU 」</h1>
+                        <h3 style="color: white">音楽 × イラスト</h3>
+                        <p style="line-height: 40px">
                             アーティスト同士のマッチングサイトです。<br>
                             作品公開しているなら誰でも利用できます。</p>
                     </div>
@@ -136,9 +134,18 @@
                 </div>
             </div>
             <div class="col-md-6">
-                <div class="features2-content1">
+                <div class="features2-content1 d-none d-md-block">
                     <h2 class="section-title" style="font-size: 30px;">全て無料</h2>
                     <p style="line-height: 28px">当サービスは全て無料です。<br>
+                        あくまで異分野同士で<br>
+                        「繋がり、さらなる高み」<br>
+                        を目指すためのものなので、<br>
+                        金銭は一切発生しません。
+                    </p>
+                </div>
+                <div class="features2-content1 d-sm-block d-md-none">
+                    <h2 class="section-title" style="font-size: 30px; margin-bottom: 20px;">全て無料</h2>
+                    <p style="line-height: 30px; margin-bottom: 12%">当サービスは全て無料です。<br>
                         あくまで異分野同士で<br>
                         「繋がり、さらなる高み」<br>
                         を目指すためのものなので、<br>
@@ -159,13 +166,21 @@
             <div class="row">
                 <div class="col-md-6" style="float:right;">
                     <div class="features2-content2">
-                        <h2 class="section-title" style="font-size: 30px;">実力派同士が繋がれる</h2>
-                        <p style="line-height: 28px; margin-right: -10px">ここが最大の肝となります。<br>
+                        {{-- PC用 --}}
+                        <h2 class="section-title d-none d-md-block" style="font-size: 30px;">実力派同士が繋がれる</h2>
+                        <p class="d-none d-md-block" style="line-height: 28px; margin-right: -10px">ここが最大の肝となります。<br>
                             実力のある人とマッチするためには、自分自身の実力も必要です。<br>
                             相手に求めるのが高いほど、自分に求められるものも高くなります。<br>
                             そのため、必然と実力派同士がマッチングするようになっています。<br>
                             この人に本当に将来性があるか？<br>
                             自分自身がプロデューサー目線で考える必要があります。</p>
+                        {{-- スマホ用 --}}
+                        <h2 class="section-title d-sm-block d-md-none" style="font-size: 30px; margin-bottom: 20px;">実力派同士が繋がれる</h2>
+                        <p class="d-sm-block d-md-none" style="line-height: 30px; margin-right: -10px">
+                            実力のある人とマッチするためには、<br>自分自身の実力も必要です。<br>
+                            そのため、必然と実力派同士が<br>マッチングするようになっています。</p>
+                        <p style="line-height: 30px; margin-top:15px; margin-right: -10px; margin-bottom: 12%;">この人に本当に将来性があるか？<br>
+                            自身がプロデューサー目線で考える必要があります。</p>
                     </div>
                 </div>
                 <div class="col-md-6"> <img class="img-responsive"
@@ -202,14 +217,14 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8 col-md-offset-2 text-center">
-                    <h2 style="font-size: 35px;">心境</h2>
-                    <p style="line-height: 35px; font-size:18px;">この世の中には、知名度はないけどカッコいい！<br>
+                    <h2 style="font-size: 35px; margin-bottom: 20px;">心境</h2>
+                    <p style="line-height: 35px; font-size:18px;">この世の中には、<br>知名度はないけど「カッコいい！」<br>
                         と思う人が山ほどいます。<br>
                         そういった人の後押しになりたい。<br>
                         可能性を少しでも広げたい。<br>
                         この一心で本サイトを作成しました。<br>
-                        無料で、実力さえあれば他の分野のアーティストと繋がれる。<br><br>
-                        一人でも多くの人が、本サイトから飛躍するのを願っています。</p>
+                        無料で、実力さえあれば<br>他の分野のアーティストと繋がれる。<br><br>
+                        一人でも多くの人が、<br>本サイトから飛躍するのを願っています。</p>
                 </div>
             </div>
         </div>
@@ -223,7 +238,7 @@
             <div class="row">
                 <div class="col-md-8 col-md-offset-2 ">
                     <h2 class="section-title"
-                        style="color: rgb(17, 14, 206); text-shadow: 1px 2px 0px rgba(0, 0, 0, 0.445);">KYOSAKUの世界へ</h2>
+                        style="color: rgb(0, 0, 0); text-shadow: 1px 2px 0px rgba(0, 0, 0, 0.445);">KYOSAKUの世界へ</h2>
                     <div class="text-center">
                         {{-- <form action="{{ route('register') }}"> --}}
                         <a href="{{ route('register') }}" class="btn24 btn24-flat mt-5 mb-4"
