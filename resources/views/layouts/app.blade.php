@@ -126,6 +126,9 @@
         <li class="drawer-item" style="margin-top: 3%">
           <a class="humberger" href="{{ route('login') }}">ログイン</a>
         </li><!-- /.drawer-item -->
+        <li class="drawer-item" style="margin-top: 3%">
+          <a class="humberger" href="{{ route('logout') }}">ログアウト</a>
+        </li><!-- /.drawer-item -->
       </ul><!-- /.drawer-list -->
     </nav>
 
