@@ -11,7 +11,6 @@
                         @foreach ($errors->all() as $error)
                         <li>{{ $error }}</li>
                         @endforeach
-                        
                     </ul>
                 </div>
                 @endif
@@ -171,7 +170,6 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="form-group" style="margin-top: 10px; padding-right: 80px; padding-left: 80px">
                         <textarea class="form-control" placeholder="自己紹介" rows="5"
                             name="profile">{{ $user->profile }}</textarea>

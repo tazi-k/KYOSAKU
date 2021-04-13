@@ -510,3 +510,56 @@
 }
 
 }
+
+
+
+
+#loading {
+  width: 100vw;
+  height: 100vh;
+  background: #000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+}
+
+#loading_barWrap {
+  width: 30vw;
+  height: calc(1rem + 5px);
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+}
+
+#loading_bar {
+  width: 0;
+  height: 5px;
+  background: #fff;
+  transition-duration: 1s;
+}
+
+.text {
+  text-align: center;
+  color: #fff;
+}
+
+.loadingNone {
+  animation: loadingAnime 1s forwards;
+}
+
+@keyframes loadingAnime {
+  0% {
+      opacity: 1;
+  }
+  99% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 0;
+      display: none;
+  }
+}

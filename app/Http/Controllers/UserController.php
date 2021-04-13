@@ -85,7 +85,6 @@ class UserController extends Controller
             return abort(403);
         }
         return view('users.edit',compact('user','prefectures','ages','genres_music','genres_illustration','my_genres_id'));
-            
     }
 
     /**

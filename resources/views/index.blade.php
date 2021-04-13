@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
-    <script src="js/bootstrap.min.js"></script>
+    <script src="{{ asset('/js/style.js') }}"></script>
 
     {{-- favicon --}}
     <link rel="icon" type="image/png" sizes="48x48" href="../images/favicon.ico">
@@ -39,6 +39,14 @@
 </head>
 
 <body>
+
+    <div id="loading">
+        <div id="loading_barWrap">
+            <p class="text">読み込み中</p>
+            <div id="loading_bar"></div>
+        </div>
+    </div>
+    
     <!-- header section -->
     <section class="banner" role="banner">
         <header id="header" style="padding-top: 20px;">
@@ -79,7 +87,6 @@
                     </nav>
                 </div>
             </div>
-            <!-- navigation section  -->
         </header>
         <!-- banner text section-->
         <div id="banner" class="container">
@@ -268,16 +275,8 @@
         </div>
     </footer>
     <!-- footer section-->
-    <!-- Include JS files -->
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>  -->
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.fancybox.pack.js"></script>
-    <script src="js/retina.min.js"></script>
-    <script src="js/modernizr.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/jquery.subscribe.js"></script>
-    <script src="js/jquery.contact.js"></script>
-    <script src="js/main.js"></script>
+    
+    
 </body>
 
 </html>
