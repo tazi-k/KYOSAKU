@@ -39,14 +39,6 @@
 </head>
 
 <body>
-
-    <div id="loading">
-        <div id="loading_barWrap">
-            <p class="text">読み込み中</p>
-            <div id="loading_bar"></div>
-        </div>
-    </div>
-    
     <!-- header section -->
     <section class="banner" role="banner">
         <header id="header" style="padding-top: 20px;">
@@ -162,7 +154,8 @@
                     </p>
                 </div>
             </div>
-            <div class="col-md-6" style="margin-top: 5%"> <img class="img-responsive"
+            <div class="col-md-6" style="margin-top: 5%"> 
+                <img class="img-responsive"
                     src="https://cdn.pixabay.com/photo/2017/08/06/12/06/people-2591874_1280.jpg"> </div>
         </div>
         </div>
@@ -196,7 +189,7 @@
                     </div>
                 </div>
                 <div class="col-md-6"> <img class="img-responsive"
-                        src="https://cdn.pixabay.com/photo/2016/11/08/05/20/adventure-1807524_1280.jpg"> </div>
+                        src="https://cdn.pixabay.com/photo/2018/06/11/10/56/shaking-hands-3468243_1280.jpg"> </div>
             </div>
         </div>
     </section>
