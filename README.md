@@ -40,5 +40,3 @@
 
 ##  ブラウザでアクセス
 http://kyosaku.herokuapp.com/
-
- master
