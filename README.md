@@ -40,4 +40,4 @@
 マッチング成立するとトーク画面でトークすることができます。<br>
 
 ##  ブラウザでアクセス
-http://kyosaku.herokuapp.com/
+https://kyosaku.herokuapp.com/
